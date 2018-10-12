@@ -1,0 +1,6 @@
+batch_size: 64
+seq_len: 25
+seed: 1234
+num_lstm_units: 128
+num_lstm_layers: 4
+embedding_dim: 64
