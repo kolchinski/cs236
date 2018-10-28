@@ -124,6 +124,10 @@ def main():
         # If the snippet is from Shakespeare's work, append 1
         # If the snippet is retrieved from a NIPS paper, append 2
         ##################################
+        if ll < -500: lbl = 0
+        elif ll < -215: lbl = 1
+        else: lbl = 2
+        lbls.append(lbl)
 
     with open("answers.pkl", 'wb') as f:
         pkl.dump(lbls, f, protocol=pkl.HIGHEST_PROTOCOL)

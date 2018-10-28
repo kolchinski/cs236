@@ -2,7 +2,7 @@ import torch
 import numpy as np
 import torch.nn as nn
 import torch.nn.functional as F
-
+from torch.distributions.categorical import Categorical
 
 class RNN(nn.Module):
     def __init__(self, vocab_size, embedding_dim, num_lstm_units, num_lstm_layers, dataset, device):
@@ -68,6 +68,12 @@ class RNN(nn.Module):
             # Append each generated token to texts
             # hint: you can use self.forward
             ##################################
+            texts.append(int(x))
+            for i in range(seq_len):
+                logits, h_prev = self.forward(x, h_prev)
+                dist = Categorical(logits=logits)
+                x = dist.sample(torch.Size([1]))
+                texts.append(int(x))
 
         return texts
 
@@ -91,5 +97,12 @@ class RNN(nn.Module):
             # Add the log-likelihood of each token into ll
             # hint: you can use self.forward
             ###################################
+            for c in string[1:]:
+                #print('c:', c)
+                logits, h_prev = self.forward(x, h_prev)
+                log_probs = torch.nn.modules.activation.LogSoftmax(dim=1)(logits)
+                ll += np.double(log_probs[0,c])
+                x = c.reshape(1,-1)
+                x = torch.from_numpy(x).type(torch.int64).to(self.device)
 
             return ll
