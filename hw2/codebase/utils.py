@@ -38,7 +38,11 @@ def sample_gaussian(m, v):
     # Sample z
     ################################################################################
 
-    z = torch.distributions.normal.Normal(m,v).rsample()
+    #z = torch.distributions.normal.Normal(m,v).rsample()
+    m0 = torch.zeros_like(m)
+    v0 = torch.ones_like(v)
+    z0 = torch.distributions.normal.Normal(m0,v0).sample()
+    z = z0 * v0 + m0
 
     ################################################################################
     # End of code modification
