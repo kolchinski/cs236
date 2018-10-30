@@ -47,7 +47,7 @@ class VAE(nn.Module):
         kls = ut.kl_normal(qm, qv, pm, pv)
         kl = torch.mean(kls)
 
-        z = ut.sample_gaussian(pm,pv)
+        z = ut.sample_gaussian(qm,qv)
         probs = self.dec.decode(z)
         recs = ut.log_bernoulli_with_logits(x, probs)
         rec = -1.0 * torch.mean(recs)
