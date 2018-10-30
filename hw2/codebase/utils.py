@@ -102,7 +102,8 @@ def log_normal_mixture(z, m, v):
     log_std = torch.log(torch.sqrt(v))
     log_probs = -((multi_z - m) ** 2) / (2 * v) - log_std - np.log(np.sqrt(2 * np.pi))
     mixture_sums = log_probs.sum(-1)
-    log_prob = mixture_sums.mean(-1)
+    #log_prob = mixture_sums.mean(-1)
+    log_prob = log_mean_exp(mixture_sums, -1)
 
     ################################################################################
     # End of code modification
