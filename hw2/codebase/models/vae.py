@@ -44,13 +44,13 @@ class VAE(nn.Module):
         qm, qv = self.enc.encode(x)
         pm = self.z_prior[0].expand(qm.shape)
         pv = self.z_prior[1].expand(qv.shape)
-        kl = ut.kl_normal(qm, qv, pm, pv)
-        kl = torch.mean(kl)
+        kls = ut.kl_normal(qm, qv, pm, pv)
+        kl = torch.mean(kls)
 
         z = ut.sample_gaussian(pm,pv)
         probs = self.dec.decode(z)
-        rec = ut.log_bernoulli_with_logits(x, torch.log(probs/(1.0 - probs)))
-        rec = -1.0 * torch.mean(rec)
+        recs = ut.log_bernoulli_with_logits(x, probs)
+        rec = -1.0 * torch.mean(recs)
 
         nelbo = kl + rec
         ################################################################################

@@ -25,6 +25,7 @@ pprint(vars(args))
 print('Model name:', model_name)
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+print(device)
 train_loader, labeled_subset, _ = ut.get_mnist_data(device, use_test_subset=True)
 vae = VAE(z_dim=args.z, name=model_name).to(device)
 
