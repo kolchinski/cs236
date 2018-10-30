@@ -47,6 +47,27 @@ class GMVAE(nn.Module):
         ################################################################################
         # Compute the mixture of Gaussian prior
         prior = ut.gaussian_parameters(self.z_pre, dim=1)
+        prior_m, prior_v = prior
+
+        batch = x.shape[0]
+
+
+        qm, qv = self.enc.encode(x)
+        # Now draw Zs from the posterior qm/qv
+        z = ut.sample_gaussian(qm,qv)
+
+        l_posterior = ut.log_normal(z, qm, qv)
+        multi_m = prior_m.expand(batch, *prior_m.shape[1:])
+        multi_v = prior_v.expand(batch, *prior_m.shape[1:])
+        l_prior = ut.log_normal_mixture(z, multi_m, multi_v)
+        kls = l_posterior - l_prior
+        kl = torch.mean(kls)
+
+        probs = self.dec.decode(z)
+        recs = ut.log_bernoulli_with_logits(x, probs)
+        rec = -1.0 * torch.mean(recs)
+
+        nelbo = kl + rec
         ################################################################################
         # End of code modification
         ################################################################################

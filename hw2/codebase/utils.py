@@ -39,10 +39,6 @@ def sample_gaussian(m, v):
     ################################################################################
 
     z = torch.distributions.normal.Normal(m,torch.sqrt(v)).rsample()
-    #m0 = torch.zeros_like(m)
-    #v0 = torch.ones_like(v)
-    #z0 = torch.distributions.normal.Normal(m0,v0).sample()
-    #z = z0 * v0 + m0
 
     ################################################################################
     # End of code modification
@@ -71,6 +67,13 @@ def log_normal(x, m, v):
     # the last dimension
     ################################################################################
 
+    # Some code adapted from
+    # https://pytorch.org/docs/stable/_modules/torch/distributions/normal.html
+
+    log_std = torch.log(torch.sqrt(v))
+    log_probs = -((x - m) ** 2) / (2 * v) - log_std - np.log(np.sqrt(2 * np.pi))
+    log_prob = log_probs.sum(-1)
+
     ################################################################################
     # End of code modification
     ################################################################################
@@ -94,6 +97,12 @@ def log_normal_mixture(z, m, v):
     # Compute the uniformly-weighted mixture of Gaussians density for each sample
     # in the batch
     ################################################################################
+
+    multi_z = z.unsqueeze(1).expand_as(m)
+    log_std = torch.log(torch.sqrt(v))
+    log_probs = -((multi_z - m) ** 2) / (2 * v) - log_std - np.log(np.sqrt(2 * np.pi))
+    mixture_sums = log_probs.sum(-1)
+    log_prob = mixture_sums.mean(-1)
 
     ################################################################################
     # End of code modification
