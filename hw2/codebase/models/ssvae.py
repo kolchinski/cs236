@@ -63,8 +63,9 @@ class SSVAE(nn.Module):
 
         #100x10
         y_prior = torch.tensor([0.1]).expand_as(y_prob).to(device)
+        y_logprior = torch.log(y_prior)
         #(batch size,)
-        kl_ys = ut.kl_cat(y_logprob, y_prob, y_prior)
+        kl_ys = ut.kl_cat(y_prob, y_logprob, y_logprior)
         kl_y = torch.mean(kl_ys)
 
 
@@ -80,7 +81,8 @@ class SSVAE(nn.Module):
         kl_zs_flat = ut.kl_normal(zqm, zqv, zpm, zpv)
         kl_zs = kl_zs_flat.reshape(10,100).t()
         kl_zs_weighted = kl_zs * y_prob
-        kl_z = kl_zs_weighted.sum(1).mean()
+        batch_kl_zs = kl_zs_weighted.sum(1)
+        kl_z = batch_kl_zs.mean()
 
         #1000 x 64
         z = ut.sample_gaussian(zqm, zqv)
@@ -88,12 +90,13 @@ class SSVAE(nn.Module):
         #1000 x 784
         probs = self.dec.decode(z, y)
         #(batch_size * y_dim,)
-        recs_flat = ut.log_bernoulli_with_logits(x, probs)
+        recs_flat = -1.0 * ut.log_bernoulli_with_logits(x, probs)
         recs = recs_flat.reshape(10,100).t()
         recs_weighted = recs * y_prob
-        rec = -1.0 * recs_weighted.sum(1).mean()
+        batch_recs = recs_weighted.sum(1)
+        rec = batch_recs.mean()
 
-        nelbos = kl_ys + kl_zs_weighted.sum(1) - recs_weighted.sum(1)
+        nelbos = kl_ys + batch_kl_zs + batch_recs
         nelbo = torch.mean(nelbos)
 
 
