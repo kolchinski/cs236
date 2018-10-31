@@ -58,32 +58,38 @@ class SSVAE(nn.Module):
         # Duplicate y based on x's batch size. Then duplicate x
         # This enumerates all possible combination of x with labels (0, 1, ..., 9)
         y = np.repeat(np.arange(self.y_dim), x.size(0))
-        y = x.new(np.eye(self.y_dim)[y])
-        x = ut.duplicate(x, self.y_dim)
+        y = x.new(np.eye(self.y_dim)[y]) #1000,10. 0,100,200 dupe
+        x = ut.duplicate(x, self.y_dim) #1000,784. 0,100,200 dupe
 
+        #100x10
         y_prior = torch.tensor([0.1]).expand_as(y_prob).to(device)
         #(batch size,)
         kl_ys = ut.kl_cat(y_logprob, y_prob, y_prior)
         kl_y = torch.mean(kl_ys)
 
 
+        #1000 x 64. Still 0,100,200 corresponding...
         zqm, zqv = self.enc.encode(x, y)
         zpm = self.z_prior_m.expand_as(zqm)
         zpv = self.z_prior_v.expand_as(zqv)
 
         #(batch_size * y_dim,)
-        kl_zs = ut.kl_normal(zqm, zqv, zpm, zpv)
-        kl_z = torch.mean(kl_zs)
+        kl_zs_flat = ut.kl_normal(zqm, zqv, zpm, zpv)
+        kl_zs = kl_zs_flat.reshape(10,100).t()
+        kl_z = kl_zs.sum(1).mean()
 
+        #1000 x 64
         z = ut.sample_gaussian(zqm, zqv)
 
+        #1000 x 784
         probs = self.dec.decode(z, y)
         #(batch_size * y_dim,)
-        recs = ut.log_bernoulli_with_logits(x, probs)
-        rec = -1.0 * torch.mean(recs)
+        recs_flat = ut.log_bernoulli_with_logits(x, probs)
+        recs = recs_flat.reshape(10,100).t()
+        rec = -1.0 * recs.sum(1).mean()
 
-        product = y_prob * kl_zs.view(100,10) * recs.view(100,10)
-        nelbos = kl_ys + torch.sum(product, 1)
+        product = y_prob * (kl_zs - recs)
+        nelbos = kl_ys + product.sum(1)
         nelbo = torch.mean(nelbos)
 
 
