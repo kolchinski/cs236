@@ -50,8 +50,9 @@ class SSVAE(nn.Module):
         #
         # Outputs should all be scalar
         ################################################################################
+        device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         y_logits = self.cls.classify(x)
-        y_logprob = F.log_softmax(y_logits, dim=1)
+        y_logprob = F.log_softmax(y_logits, dim=1).to(device)
         y_prob = torch.softmax(y_logprob, dim=1) # (batch, y_dim)
 
         # Duplicate y based on x's batch size. Then duplicate x
