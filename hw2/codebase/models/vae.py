@@ -80,6 +80,45 @@ class VAE(nn.Module):
         # Outputs should all be scalar
         ################################################################################
 
+        batch = x.shape[0]
+        multi_x = ut.duplicate(x, iw)
+
+        qm, qv = self.enc.encode(x)
+        multi_qm = ut.duplicate(qm, iw)
+        multi_qv = ut.duplicate(qv, iw)
+        #multi_qm = qm.unsqueeze(1).expand(
+        #    qm.shape[0], iw, *qm.shape[1:]).reshape(-1, *qm.shape[1:])
+        #multi_qv = qv.unsqueeze(1).expand(
+        #    qv.shape[0], iw, *qv.shape[1:]).reshape(-1, *qv.shape[1:])
+
+        # z will be (batch*iw x z_dim)
+        # with sampled z's for a given x non-contiguous!
+        z = ut.sample_gaussian(multi_qm,multi_qv)
+
+        probs = self.dec.decode(z)
+        recs = ut.log_bernoulli_with_logits(multi_x, probs)
+        rec = -1.0 * torch.mean(recs)
+
+        multi_pm = self.z_prior[0].expand(multi_qm.shape)
+        multi_pv = self.z_prior[1].expand(multi_qv.shape)
+
+        z_priors = ut.log_normal(z, multi_pm, multi_pv)
+        x_posteriors = recs
+        z_posteriors = ut.log_normal(z, multi_qm, multi_qv)
+
+        log_ratios = z_priors + x_posteriors - z_posteriors
+        # Should be (batch*iw, z_dim), batch ratios non contiguous
+
+        unflat_log_ratios = log_ratios.reshape(iw, batch)
+
+        #Complex crap with dimensions here, fix me...
+        niwae = ut.log_mean_exp(unflat_log_ratios, 0)
+
+        pm = self.z_prior[0].expand(qm.shape)
+        pv = self.z_prior[1].expand(qv.shape)
+        kls = ut.kl_normal(qm, qv, pm, pv)
+        kl = torch.mean(kls)
+
         ################################################################################
         # End of code modification
         ################################################################################
