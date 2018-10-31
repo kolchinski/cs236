@@ -59,6 +59,33 @@ class SSVAE(nn.Module):
         y = np.repeat(np.arange(self.y_dim), x.size(0))
         y = x.new(np.eye(self.y_dim)[y])
         x = ut.duplicate(x, self.y_dim)
+
+        y_prior = torch.tensor([0.1]).expand_as(y_prob)
+        #(batch size,)
+        kl_ys = ut.kl_cat(y_logprob, y_prob, y_prior)
+        kl_y = torch.mean(kl_ys)
+
+
+        zqm, zqv = self.enc.encode(x, y)
+        zpm = self.z_prior_m.expand_as(zqm)
+        zpv = self.z_prior_v.expand_as(zqv)
+
+        #(batch_size * y_dim,)
+        kl_zs = ut.kl_normal(zqm, zqv, zpm, zpv)
+        kl_z = torch.mean(kl_zs)
+
+        z = ut.sample_gaussian(zqm, zqv)
+
+        probs = self.dec.decode(z, y)
+        #(batch_size * y_dim,)
+        recs = ut.log_bernoulli_with_logits(x, probs)
+        rec = -1.0 * torch.mean(recs)
+
+        product = y_prob * kl_zs.view(100,10) * recs.view(100,10)
+        nelbos = kl_ys + torch.sum(product, 1)
+        nelbo = torch.mean(nelbos)
+
+
         ################################################################################
         # End of code modification
         ################################################################################
