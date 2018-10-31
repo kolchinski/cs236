@@ -73,10 +73,14 @@ class SSVAE(nn.Module):
         zpm = self.z_prior_m.expand_as(zqm)
         zpv = self.z_prior_v.expand_as(zqv)
 
+        #so the zpm, zpv go as x quickly, y slowly
+        #equivalent to y being the 0th dimension
+
         #(batch_size * y_dim,)
         kl_zs_flat = ut.kl_normal(zqm, zqv, zpm, zpv)
         kl_zs = kl_zs_flat.reshape(10,100).t()
-        kl_z = kl_zs.sum(1).mean()
+        kl_zs_weighted = kl_zs * y_prob
+        kl_z = kl_zs_weighted.sum(1).mean()
 
         #1000 x 64
         z = ut.sample_gaussian(zqm, zqv)
@@ -86,10 +90,10 @@ class SSVAE(nn.Module):
         #(batch_size * y_dim,)
         recs_flat = ut.log_bernoulli_with_logits(x, probs)
         recs = recs_flat.reshape(10,100).t()
-        rec = -1.0 * recs.sum(1).mean()
+        recs_weighted = recs * y_prob
+        rec = -1.0 * recs_weighted.sum(1).mean()
 
-        product = y_prob * (kl_zs - recs)
-        nelbos = kl_ys + product.sum(1)
+        nelbos = kl_ys + kl_zs_weighted.sum(1) - recs_weighted.sum(1)
         nelbo = torch.mean(nelbos)
 
 
