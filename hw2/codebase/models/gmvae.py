@@ -58,7 +58,7 @@ class GMVAE(nn.Module):
 
         l_posterior = ut.log_normal(z, qm, qv)
         multi_m = prior_m.expand(batch, *prior_m.shape[1:])
-        multi_v = prior_v.expand(batch, *prior_m.shape[1:])
+        multi_v = prior_v.expand(batch, *prior_v.shape[1:])
         l_prior = ut.log_normal_mixture(z, multi_m, multi_v)
         kls = l_posterior - l_prior
         kl = torch.mean(kls)
