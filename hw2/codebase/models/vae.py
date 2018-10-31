@@ -112,7 +112,7 @@ class VAE(nn.Module):
         unflat_log_ratios = log_ratios.reshape(iw, batch)
 
         niwaes = ut.log_mean_exp(unflat_log_ratios, 0)
-        niwae = torch.mean(niwaes)
+        niwae = -1.0 * torch.mean(niwaes)
 
         pm = self.z_prior[0].expand(qm.shape)
         pv = self.z_prior[1].expand(qv.shape)
