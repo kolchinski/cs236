@@ -52,7 +52,7 @@ class SSVAE(nn.Module):
         ################################################################################
         device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         y_logits = self.cls.classify(x)
-        y_logprob = F.log_softmax(y_logits, dim=1).to(device)
+        y_logprob = F.log_softmax(y_logits, dim=1)
         y_prob = torch.softmax(y_logprob, dim=1) # (batch, y_dim)
 
         # Duplicate y based on x's batch size. Then duplicate x
@@ -61,7 +61,7 @@ class SSVAE(nn.Module):
         y = x.new(np.eye(self.y_dim)[y])
         x = ut.duplicate(x, self.y_dim)
 
-        y_prior = torch.tensor([0.1]).expand_as(y_prob)
+        y_prior = torch.tensor([0.1]).expand_as(y_prob).to(device)
         #(batch size,)
         kl_ys = ut.kl_cat(y_logprob, y_prob, y_prior)
         kl_y = torch.mean(kl_ys)
