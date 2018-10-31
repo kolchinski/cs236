@@ -111,8 +111,8 @@ class VAE(nn.Module):
 
         unflat_log_ratios = log_ratios.reshape(iw, batch)
 
-        #Complex crap with dimensions here, fix me...
-        niwae = ut.log_mean_exp(unflat_log_ratios, 0)
+        niwaes = ut.log_mean_exp(unflat_log_ratios, 0)
+        niwae = torch.mean(niwae)
 
         pm = self.z_prior[0].expand(qm.shape)
         pv = self.z_prior[1].expand(qv.shape)
