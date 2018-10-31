@@ -96,6 +96,41 @@ class GMVAE(nn.Module):
         ################################################################################
         # Compute the mixture of Gaussian prior
         prior = ut.gaussian_parameters(self.z_pre, dim=1)
+        prior_m, prior_v = prior
+
+        batch = x.shape[0]
+        multi_x = ut.duplicate(x, iw)
+
+        qm, qv = self.enc.encode(x)
+        multi_qm = ut.duplicate(qm, iw)
+        multi_qv = ut.duplicate(qv, iw)
+
+        # z will be (batch*iw x z_dim)
+        # with sampled z's for a given x non-contiguous!
+        z = ut.sample_gaussian(multi_qm,multi_qv)
+
+        probs = self.dec.decode(z)
+        recs = ut.log_bernoulli_with_logits(multi_x, probs)
+        rec = -1.0 * torch.mean(recs)
+
+        multi_m = prior_m.expand(batch*iw, *prior_m.shape[1:])
+        multi_v = prior_v.expand(batch*iw, *prior_v.shape[1:])
+        z_priors = ut.log_normal_mixture(z, multi_m, multi_v)
+        x_posteriors = recs
+        z_posteriors = ut.log_normal(z, multi_qm, multi_qv)
+
+        kls = z_posteriors - z_priors
+        kl = torch.mean(kls)
+
+        log_ratios = z_priors + x_posteriors - z_posteriors
+        # Should be (batch*iw, z_dim), batch ratios non contiguous
+
+        unflat_log_ratios = log_ratios.reshape(iw, batch)
+
+        niwaes = ut.log_mean_exp(unflat_log_ratios, 0)
+        niwae = -1.0 * torch.mean(niwaes)
+
+
         ################################################################################
         # End of code modification
         ################################################################################

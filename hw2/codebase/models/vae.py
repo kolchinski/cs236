@@ -86,10 +86,6 @@ class VAE(nn.Module):
         qm, qv = self.enc.encode(x)
         multi_qm = ut.duplicate(qm, iw)
         multi_qv = ut.duplicate(qv, iw)
-        #multi_qm = qm.unsqueeze(1).expand(
-        #    qm.shape[0], iw, *qm.shape[1:]).reshape(-1, *qm.shape[1:])
-        #multi_qv = qv.unsqueeze(1).expand(
-        #    qv.shape[0], iw, *qv.shape[1:]).reshape(-1, *qv.shape[1:])
 
         # z will be (batch*iw x z_dim)
         # with sampled z's for a given x non-contiguous!
