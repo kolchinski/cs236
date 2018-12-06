@@ -1,2 +1,5 @@
+*.zip
+*pycache*
+*checkpoints*
 .DS_Store
 .idea*
