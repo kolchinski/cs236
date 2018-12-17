@@ -1,0 +1,824 @@
+bplist00Ò_WebMainResource_WebSubresourcesÕ	
+^WebResourceURL_WebResourceFrameName_WebResourceData_WebResourceMIMEType_WebResourceTextEncodingName_'https://deepgenerativemodels.github.io/POZ–<!DOCTYPE html><html lang="en-US"><head>
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>CS 236: Deep Generative Models | Fall 2018-2019</title>
+<meta name="generator" content="Jekyll v3.7.4">
+<meta property="og:title" content="CS 236: Deep Generative Models">
+<meta name="author" content="Aditya Grover">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Fall 2018-2019">
+<meta property="og:description" content="Fall 2018-2019">
+<link rel="canonical" href="https://deepgenerativemodels.github.io/">
+<meta property="og:url" content="https://deepgenerativemodels.github.io/">
+<meta property="og:site_name" content="CS 236: Deep Generative Models">
+<script type="application/ld+json">
+{"@type":"WebSite","url":"https://deepgenerativemodels.github.io/","name":"CS 236: Deep Generative Models","headline":"CS 236: Deep Generative Models","author":{"@type":"Person","name":"Aditya Grover"},"description":"Fall 2018-2019","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/assets/css/style.css?v=78933f1be04213234aa41686fe08910a1f5fdc40">
+  <style>.pkt_added {text-decoration:none !important;}</style><style></style></head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">CS 236: Deep Generative Models</h1>
+      <h2 class="project-tagline">Fall 2018-2019</h2>
+      
+      
+    </section>
+
+    <section class="main-content">
+      <h2 id="timelocation">Time/Location</h2>
+<ul>
+  <li>Lectures: Mon/Wed 4:30-5:50 pm, Location: Room 320-105.</li>
+  <li>Office Hours and Sections: See <a href="https://calendar.google.com/calendar/embed?src=3cr1ibe8ihrs1ev0t8gi19r9v0%40group.calendar.google.com&amp;ctz=America%2FLos_Angeles">course calendar</a>.</li>
+  <li>Mid-term: November 9 (Friday), 6-9 pm, Location: Hewlett 200.</li>
+</ul>
+
+<h2 id="instructors">Instructors</h2>
+<p><a href="https://cs.stanford.edu/~ermon/">Stefano Ermon</a><br>
+<a href="http://aditya-grover.github.io/">Aditya Grover</a></p>
+
+<h2 id="course-assistants">Course Assistants</h2>
+<p><a href="https://yang-song.github.io/">Yang Song</a> <br>
+<a href="http://tsong.me/">Jiaming Song</a><br>
+<a href="http://ruishu.io/">Rui Shu</a><br>
+<a href="http://caseychu.io/">Casey Chu</a><br>
+<a href="https://www.linkedin.com/in/nishith-khandwala-16b27227">Nishith Khandwala</a><br>
+<a href="http://kristychoi.com/">Kristy Choi</a></p>
+
+<h2 id="course-description">Course Description</h2>
+
+<p>Generative models are widely used in many subfields of AI and Machine Learning. Recent advances in parameterizing these models using deep neural networks, combined with progress in stochastic optimization methods, have enabled scalable modeling of complex, high-dimensional data including images, text, and speech. In this course, we will study the probabilistic foundations and learning algorithms for deep generative models, including Variational Autoencoders (VAE), Generative Adversarial Networks (GAN), autoregressive models, and normalizing flow models. The course will also discuss application areas that have benefitted from deep generative models, including computer vision, speech and natural language processing, graph mining, and reinforcement learning.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>Basic knowledge about machine learning from at least one of CS 221, 228, 229 or 230. Students will work with computational and mathematical models and should have a basic knowledge of probabilities and calculus. Proficiency in some programming language, preferably Python, required.</p>
+
+<h2 id="useful-links">Useful links</h2>
+
+<p><a href="https://www.piazza.com/stanford/fall2018/cs236">Piazza</a><br>
+<a href="https://deepgenerativemodels.github.io/notes/index.html">Course notes</a></p>
+
+<h2 id="suggested-reading">Suggested Reading</h2>
+
+<p>There is no required textbook. <em>Deep Learning</em> by Ian Goodfellow, Yoshua Bengio, Aaron Courville. Online version available free <a href="https://www.deeplearningbook.org/">here</a>.</p>
+
+<h2 id="grading-policy">Grading Policy</h2>
+<ul>
+  <li>Three homeworks (15% each): mix of conceptual and programming based questions</li>
+  <li>Midterm: 15%</li>
+  <li>Course Project: 40%
+    <ul>
+      <li>Proposal: 5%</li>
+      <li>Progress Report: 10%</li>
+      <li>Poster Presentation: 10%</li>
+      <li>Final Report: 15%</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="project-guidelines">Project Guidelines</h2>
+<p>The course project will give the students a chance to explore deep generative modeling in greater detail. Course projects will be done in groups of up to 3 students and can fall into one or more of the following categories:</p>
+<ul>
+  <li>Application of deep generative models on a novel task/dataset</li>
+  <li>Algorithmic improvements into the evaluation, learning and/or inference of deep generative models</li>
+  <li>Theoretical analysis of any aspect of existing deep generative models</li>
+</ul>
+
+<h2 id="collaboration-policy-and-honor-code">Collaboration Policy and Honor Code</h2>
+<p>You are free to form study groups and discuss homeworks and projects. However, you must write up homeworks and code from scratch independently without referring to any notes from the joint session. You should not copy, refer to, or look at the solutions in preparing their answers from previous yearsâ€™ homeworks. It is an honor code violation to intentionally refer to a previous yearâ€™s solutions, either official or written up by another student. Anybody violating the honor code will be referred to the Office of Judicial Affairs.</p>
+
+<h2 id="submission-instructions">Submission Instructions</h2>
+<p>We will be using the <a href="http://www.gradescope.com/">GradeScope</a> online submission system. All students (non-SCPD and SCPD) should submit their assignments electronically via <a href="http://www.gradescope.com/">GradeScope</a>. Students can typeset or scan their homeworks.</p>
+
+<p>To register for GradeScope,</p>
+<ul>
+  <li>Create an account on <a href="http://www.gradescope.com/">GradeScope</a> if you donâ€™t have one already.</li>
+  <li>Here are some <a href="https://cs.stanford.edu/~ermon/cs228/submitting_hw_guide.pdf">tips</a> for submitting through Gradescope.</li>
+</ul>
+
+<p><strong>Written Assignments</strong>: Homeworks should be written up clearly and succinctly; you may lose points if your answers are unclear or unnecessarily complicated. You are encouraged to use LaTeX to writeup your homeworks (here is a <a href="/assets/files/hwtemplate.tex">template</a>), but this is not a requirement.</p>
+
+<p><strong>Late Homework</strong>: You have 6 late days which you can use at any time during the term without penalty. For a particular homework, you can use only two late days. Once you run out of late days, you will incur in a 25% penalty for each extra late day you use. Each late homework should be clearly marked as â€œLateâ€ on the first page. <strong>No late days is allowed for deadlines related to the course project.</strong></p>
+
+<p><strong>Regrade Policy</strong>: You may submit a regrade request if you believe that the course staff made an error in grading. Any regrade requests should be submitted through Gradescope within one week of receiving your grade. Please try to be as specific as possible with your regrade request.</p>
+
+<h2 id="syllabus-tentative-periodically-updated-throughout-the-quarter">Syllabus (tentative, periodically updated throughout the quarter)</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Week</th>
+      <th>Starting date</th>
+      <th>Lecture topics</th>
+      <th>Coursework</th>
+      <th>Sections</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Sep 24</td>
+      <td>Introduction and Background (<a href="/assets/slides/cs236_lecture1.pdf">slides 1</a>, <a href="/assets/slides/cs236_lecture2.pdf">slides 2</a>)</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Oct 1</td>
+      <td>Autoregressive Models (<a href="/assets/slides/cs236_lecture3.pdf">slides 3</a>, <a href="/assets/slides/cs236_lecture4.pdf">slides 4</a>)</td>
+      <td>HW 1 released</td>
+      <td>Probability and linear algebra, PyTorch</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Oct 8</td>
+      <td>Variational Autoencoders (<a href="/assets/slides/cs236_lecture5.pdf">slides 5</a>, <a href="/assets/slides/cs236_lecture6.pdf">slides 6</a>)</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Oct 15</td>
+      <td>Normalizing Flow Models (<a href="/assets/slides/cs236_lecture7.pdf">slides 7</a>, <a href="/assets/slides/cs236_lecture8.pdf">slides 8</a>)</td>
+      <td>HW 1 due, HW 2 released</td>
+      <td>CNNs and RNNs (<a href="/assets/slides/session3.pdf">slides</a>)</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Oct 22</td>
+      <td>Generative Adversarial Networks (<a href="/assets/slides/cs236_lecture9.pdf">slides 9</a>, <a href="/assets/slides/cs236_lecture10.pdf">slides 10</a>)</td>
+      <td>Project Proposal due</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Oct 29</td>
+      <td>Guest lecture 1: Tengyu Ma on Monday,<br>  Evaluation of Generative Models on Wednesday (<a href="/assets/slides/cs236_lecture11.pdf">slides 11</a>)</td>
+      <td>HW 2 due</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>Nov 5</td>
+      <td>Combining generative model variants (<a href="/assets/slides/cs236_lecture12.pdf">slides 12</a>), Energy-based models (<a href="/assets/slides/cs236_lecture13.pdf">slides 13</a>)</td>
+      <td>Mid term</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>Nov 12</td>
+      <td>Guest lecture 2: Diederik P. Kingma on Monday,<br>  Discreteness in Latent Variable Modeling on Wednesday (<a href="/assets/slides/cs236_lecture14.pdf">slides 14</a>)</td>
+      <td>Project Progress Report due, HW 3 released</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>Nov 19</td>
+      <td>- Thanksgiving break -</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Nov 26</td>
+      <td>Applications: Vision, Speech, Language, Graphs, Reinforcement learning</td>
+      <td>Poster presentation on Friday</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>Dec 3</td>
+      <td>Generative Adversarial Imitation Learning. No class on Wednesday.</td>
+      <td>HW 3 due</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>Dec 10</td>
+      <td>- Finals week -</td>
+      <td>Final project reports due on <br> Dec 12th (no late days)</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="additional-reading-surveys-and-tutorials">Additional Reading: Surveys and tutorials</h1>
+
+<ol>
+  <li><a href="https://ermongroup.github.io/generative-models/">Tutorial on Deep Generative Models.</a> Aditya Grover and Stefano Ermon. International Joint Conference on Artificial Intelligence, July 2018.</li>
+  <li><a href="https://sites.google.com/view/cvpr2018tutorialongans/">Tutorial on Generative Adversarial Networks.</a> Computer Vision and Pattern Recognition, June 2018.</li>
+  <li><a href="https://www.youtube.com/watch?v=JrO5fSskISY">Tutorial on Deep Generative Models.</a> Shakir Mohamed and Danilo Rezende. Uncertainty in Artificial Intelligence, July 2017.</li>
+  <li><a href="https://www.youtube.com/watch?v=AJVyzd0rqdc">Tutorial on Generative Adversarial Networks.</a> Ian Goodfellow. Neural Information Processing Systems, December 2016.</li>
+  <li><a href="https://www.cs.cmu.edu/~rsalakhu/papers/annrev.pdf">Learning deep generative models.</a> Ruslan Salakhutdinov. Annual Review of Statistics and Its Application, April 2015.</li>
+</ol>
+
+<h1 id="poster-session">Poster Session</h1>
+
+<h2 id="time--location">Time &amp; Location</h2>
+
+<p>Friday, Nov. 30, 2018.<br>
+AT&amp;T Patio, Gates Computer Science Building.</p>
+
+<p><strong>Session 1:</strong> 9:30 - 11:30 am<br>
+<strong>Session 2:</strong> 12:30 - 2:30 pm<br>
+<strong>Session 3:</strong> 2:30 - 4:30 pm</p>
+
+<h2 id="project-teams-and-titles">Project Teams and Titles</h2>
+
+<p><strong>Session 1:</strong> 9:30 - 11:30 am</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Team</th>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Suraj Nair</td>
+      <td>Learning Visual Representations for Robot Manipulation Using Stuctured Generation</td>
+    </tr>
+    <tr>
+      <td>Masha Itkina</td>
+      <td>A Generative Approach to Urban Environment Prediction</td>
+    </tr>
+    <tr>
+      <td>Margaret Guo, Zhenqin Wu</td>
+      <td>Molecule Generation with Iterative Refining Graph Variational Autoencoder</td>
+    </tr>
+    <tr>
+      <td>Marcella Cindy Prasetio</td>
+      <td>Unsupervised Face-to-Manga Translation with CycleGAN</td>
+    </tr>
+    <tr>
+      <td>Abubakar Abid</td>
+      <td>Deep Generative Models with Contrast</td>
+    </tr>
+    <tr>
+      <td>Aaron Effron, Abhijeet Shenoi, Alexia Wu</td>
+      <td>Progressive Flow Models</td>
+    </tr>
+    <tr>
+      <td>Rewa Sood, Jing Lim, Ashwini Ramamoorthy</td>
+      <td>Super Resolution of MR images using GANs</td>
+    </tr>
+    <tr>
+      <td>Samir Sen, Trevor Tsue</td>
+      <td>Deep Generative Voice Style Transfer</td>
+    </tr>
+    <tr>
+      <td>Kunal Menda, Patrick Slade</td>
+      <td>Learned Observation Models For Real-Time State Estimation</td>
+    </tr>
+    <tr>
+      <td>Ryan Holmdahl</td>
+      <td>Generating Novel Molecules with Iterative Refining Graph Autoencoders</td>
+    </tr>
+    <tr>
+      <td>Christopher Yeh, Sherrie Wang, Rose Rustowicz</td>
+      <td>Learning disentangled features for satellite imagery</td>
+    </tr>
+    <tr>
+      <td>Xuerong Xiao</td>
+      <td>GAN-based segmentation of dendritic spines</td>
+    </tr>
+    <tr>
+      <td>Ruohan Zhan, Ruilin Li</td>
+      <td>Knockoff GAN</td>
+    </tr>
+    <tr>
+      <td>Kun Ho Kim</td>
+      <td>Dynamics Model Learning via Generative Adversarial Imitation Learning</td>
+    </tr>
+    <tr>
+      <td>Andrew Deveau, Youkow Homma</td>
+      <td>Question-Answer Joke Generation</td>
+    </tr>
+    <tr>
+      <td>Oskar Triebe, Tymor Hamamsy, Will Lauer</td>
+      <td>Modeling Electrical Loads With Generative Models</td>
+    </tr>
+    <tr>
+      <td>Meng Tang, Yimin Liu</td>
+      <td>Deep Learning based proxy model for fluid flowthrough porous media</td>
+    </tr>
+    <tr>
+      <td>Panagiotis Lolas</td>
+      <td>Time-series anomaly detection</td>
+    </tr>
+    <tr>
+      <td>Manon Romain</td>
+      <td>Adversarial Object Enhancement</td>
+    </tr>
+    <tr>
+      <td>Animesh Koratana</td>
+      <td>Learned Divergence Metrics for Knowledge Distillation</td>
+    </tr>
+    <tr>
+      <td>Yanbing Zhu</td>
+      <td>GANs for Stable Materials Generation</td>
+    </tr>
+    <tr>
+      <td>Carlos Gomez</td>
+      <td>Learning Variational Autoencoders Through The Laplace Approximation</td>
+    </tr>
+    <tr>
+      <td>Xizhi Han, Zhaoheng Guo</td>
+      <td>Variational Monte Carlo Search for Quantum Many-body Ground States</td>
+    </tr>
+    <tr>
+      <td>Anchit Gupta, Jonathan Booher</td>
+      <td>sim2real Domain Adaptation for robotic manipulation using GAN</td>
+    </tr>
+    <tr>
+      <td>Liyue Shen</td>
+      <td>Representation Learning based on Deep Generative Model for Abnormally Detection</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Session 2:</strong> 12:30 - 2:30 pm</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Team.</th>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Laetitia Shao</td>
+      <td>Unrestricted Adversarial Training</td>
+    </tr>
+    <tr>
+      <td>Gael Colas, Rafael Rafailov</td>
+      <td>Video Colorization using GAN</td>
+    </tr>
+    <tr>
+      <td>Malik Boudiaf, Ianis Boigdal-Lambert</td>
+      <td>Imitating driving behavior in an urban environment</td>
+    </tr>
+    <tr>
+      <td>Jacob Hoffman</td>
+      <td>GAN-Based Data Augmentation for Brain Leision Segmentation</td>
+    </tr>
+    <tr>
+      <td>Arnaud Autef, Amaury Sabran, Benjamin Petit</td>
+      <td>Neural Processes for Image Completion</td>
+    </tr>
+    <tr>
+      <td>Pedro Garzon, Noa Glaser, Swetava Gangli</td>
+      <td>GeoGAN: GeoSpatial Feature Learning Using Generative Adversarial Networks</td>
+    </tr>
+    <tr>
+      <td>Alex Poms</td>
+      <td>Generative Models for General 3D Scenes</td>
+    </tr>
+    <tr>
+      <td>Shuvam Chakraborty, Vineet Kosaraju, Zaid Nabulsi</td>
+      <td>Poverty Prediction from Learned Satellite Representations through Multiclass cGANs</td>
+    </tr>
+    <tr>
+      <td>Ramon Iglesias</td>
+      <td>Latent Controllable Dynamics</td>
+    </tr>
+    <tr>
+      <td>Ramtin Keramati</td>
+      <td>Exploration with controllable agent in Reinfrocement learning</td>
+    </tr>
+    <tr>
+      <td>Christopher Lazarus, Ines Chami, Marc Thibault</td>
+      <td>Hallucigraph</td>
+    </tr>
+    <tr>
+      <td>Cody Kala, Owen Wang, Todd Macdonald</td>
+      <td>RinneGAN: Frame Interpolation on Animated Videos using Generative Adversarial Networks</td>
+    </tr>
+    <tr>
+      <td>Kyle Julian</td>
+      <td>Wildfire Image Generation Through Generative Adversarial Networks</td>
+    </tr>
+    <tr>
+      <td>Eric Zelikman</td>
+      <td>Adversarial Models of Reality (AMoRe)</td>
+    </tr>
+    <tr>
+      <td>Davis Rempe</td>
+      <td>Generating Physical Dynamics of 3D Rigid Objects</td>
+    </tr>
+    <tr>
+      <td>Akhila Yerukola, Amita Kamath</td>
+      <td>Text Generation using GANs</td>
+    </tr>
+    <tr>
+      <td>Alex Haigh, Sam Schwager, Frits van Paasschen</td>
+      <td>Deep Autoregressive Models for Conditional Graph Generation</td>
+    </tr>
+    <tr>
+      <td>Aldo Gael Carranza</td>
+      <td>Structured Variational Autoencoders</td>
+    </tr>
+    <tr>
+      <td>Megha Jhunjhunwala, Shreyash Pandey, Vivekkumar Patel</td>
+      <td>Fine grained text to image generation</td>
+    </tr>
+    <tr>
+      <td>Ana-Maria Istrate</td>
+      <td>Text to Image using Stacked GANs</td>
+    </tr>
+    <tr>
+      <td>Josh Singer, Sean Oâ€™Bannon, Tyler Smith</td>
+      <td>Frame Interpolation using Generative Adversarial Networks</td>
+    </tr>
+    <tr>
+      <td>Chaofei Fan</td>
+      <td>Optimal Decoder for VAE</td>
+    </tr>
+    <tr>
+      <td>Will Deaderick, Abhishek Roushan</td>
+      <td>AutoDoodler: Style Infusion for Automatic Doodle Artwork Generation</td>
+    </tr>
+    <tr>
+      <td>Marco Monteiro</td>
+      <td>lip2lip</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Session 3:</strong> 2:30 - 4:30 pm</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Team</th>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>David Tagliamonti, Akihiro Matsukawa, Benjamin Goeing</td>
+      <td>Image-to-Image Translation with Deep Invertible Generators</td>
+    </tr>
+    <tr>
+      <td>Nathan Dalal, Nikhil Sardana, Zhilin Jiang</td>
+      <td>Towards Fast Generative Image Compression</td>
+    </tr>
+    <tr>
+      <td>Cagan Alkan, Beliz Gunel</td>
+      <td>Generative Adversarial Network for Compressed Sensing MRI</td>
+    </tr>
+    <tr>
+      <td>Andrew Bylard</td>
+      <td>Generating Coarse Seed Trajectories for Refinement</td>
+    </tr>
+    <tr>
+      <td>Eric Wang + Hugh Zhang</td>
+      <td>A new method for chit-chat dialogue generation</td>
+    </tr>
+    <tr>
+      <td>Stefania Moroianu, Charbel Saad</td>
+      <td>Voice conversion with Flow-GAN + CycleGAN</td>
+    </tr>
+    <tr>
+      <td>Jonathan Gomes Selman, Woody Wang</td>
+      <td>Intuitive Teleoperation via VAEs</td>
+    </tr>
+    <tr>
+      <td>Apoorva Dornadula, Ashwini Pokle</td>
+      <td>Improving Model Fairnessâ€¦One Dataset At A Time</td>
+    </tr>
+    <tr>
+      <td>Lisa Lei</td>
+      <td>Unpaired GANs for MR Parallel Imaging Reconstruction</td>
+    </tr>
+    <tr>
+      <td>Mark Sabini, Zahra Abdullah, Darrith Phan</td>
+      <td>GAN-stronomy: Generative Cooking with Conditional DCGANs</td>
+    </tr>
+    <tr>
+      <td>Yuxing Chen, Zhefan Wang</td>
+      <td>An Analysis of Various Image Inpainting Methods</td>
+    </tr>
+    <tr>
+      <td>Stephen Pfohl, Daisy Ding, Tony Duan</td>
+      <td>Latent-Variable Models for Counterfactual Fairness in Cardiovascular Disease Risk Prediction</td>
+    </tr>
+    <tr>
+      <td>Shuyang Shi, Yongshang Wu</td>
+      <td>Change Point Detection with Deep Generative Models</td>
+    </tr>
+    <tr>
+      <td>Toby</td>
+      <td>Generating chord progressions with recurrent VAEeeeeeeeees</td>
+    </tr>
+    <tr>
+      <td>Chris Chute, Kelly Shen</td>
+      <td>CycleFlow: Unpaired Image-to-image Translation with Normalizing Flows</td>
+    </tr>
+    <tr>
+      <td>Loren Amdahl-Culleton</td>
+      <td>Neural FM Synthesis</td>
+    </tr>
+    <tr>
+      <td>Mansheej Paul, Phillip Etter</td>
+      <td>Deep Tunes</td>
+    </tr>
+    <tr>
+      <td>Ji Won Park</td>
+      <td>Classification of Astronomical Time Series with Representation Learning</td>
+    </tr>
+    <tr>
+      <td>Karen Leung</td>
+      <td>Latent MDP</td>
+    </tr>
+    <tr>
+      <td>Alex Kolchinski, Andrew Kondrich</td>
+      <td>CycleFlow</td>
+    </tr>
+    <tr>
+      <td>Xiao Chen, Thomas Navidi</td>
+      <td>A GAN based method for fairness and privacy</td>
+    </tr>
+    <tr>
+      <td>Jen Weng</td>
+      <td>Cycle Consistency in Normal Flow Models</td>
+    </tr>
+    <tr>
+      <td>Arjun Arora, William Zeng</td>
+      <td>Frame Interpolation on Dance Covers using Generative Adversarial Networks</td>
+    </tr>
+    <tr>
+      <td>Ben Sorscher</td>
+      <td>Simulating Gravitational Lenses with Deep Generative Models</td>
+    </tr>
+    <tr>
+      <td>Abhi Kulgod, Neel Yerneni, Varun Nambakrishnan</td>
+      <td>MuseVAE: Mood Based Music Generation</td>
+    </tr>
+    <tr>
+      <td>Victoria Tsai, Sagnik Majumder, Patrick DeMIchele</td>
+      <td>FlowGAN</td>
+    </tr>
+    <tr>
+      <td>Zhen Qin, Kuangcong Liu, Haoshen Hong</td>
+      <td>Travelling Salesmen Problem Approximation with Probabilistic Generations</td>
+    </tr>
+    <tr>
+      <td>Peter Zachares, Michelle A Lee</td>
+      <td>Multimodal Representation Models in Robotics</td>
+    </tr>
+    <tr>
+      <td>Xiaobai Ma</td>
+      <td>Novel View Synthesis by Geometric Transformation and Image Completion Neural Network</td>
+    </tr>
+    <tr>
+      <td>Jiaqi Jiang, Chenzhuo Zhu</td>
+      <td>GAN-enabled metasurface design</td>
+    </tr>
+    <tr>
+      <td>Dian Ang Yap</td>
+      <td>Audio joint-source channel coding</td>
+    </tr>
+    <tr>
+      <td>Justin Dieter, Brian Lui</td>
+      <td>Dual Repulsive BiGANs for Anomaly Detection</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>We gratefully acknowledge funding from the Stanford Computer Forum for sponsoring the poster session.</em></p>
+
+
+
+      <footer class="site-footer">
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </section>
+
+    
+  
+</body></html>Ytext/htmlUUTF-8¤ Õ_WebResourceResponseO‘bplist00ÔjkX$versionX$objectsY$archiverT$top † ¯#)*0123MNOPQRSTUVWXYZ[\]^_`deU$nullİ	
+ !"___nsurlrequest_proto_prop_obj_6___nsurlrequest_proto_prop_obj_3R$2___nsurlrequest_proto_prop_obj_0R$3___nsurlrequest_proto_prop_obj_4V$class___nsurlrequest_proto_prop_obj_1R$4R$0___nsurlrequest_proto_prop_obj_5___nsurlrequest_proto_prop_obj_2R$1€€€	€€€€ €Ó$% '(WNS.base[NS.relative€ €€_9https://fonts.googleapis.com/css?family=Open+Sans:400,700Ò+,-.Z$classnameX$classesUNSURL¢-/XNSObject#AÀä,³Rë³ ÈÓ456ALWNS.keysZNS.objectsª789:;<=>?@€	€
+€€€€€€€€ªBCDEFGHIJE€€€€€€€€€€€]Cache-Control\Content-TypeX__hhaa___Timing-Allow-OriginTDate_X-Frame-Options_Content-Encoding_X-XSS-ProtectionWExpires_Access-Control-Allow-Origin_private, max-age=86400_text/css; charset=utf-8_<
+
+YnBsaXN0MDDZAQIDBAUGBwgJCgwODxETFRcZXxAbQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luXENvbnRlbnQtVHlwZV8QE1RpbWluZy1BbGxvdy1PcmlnaW5URGF0ZV8QD1gtRnJhbWUtT3B0aW9uc18QEENvbnRlbnQtRW5jb2RpbmdfEBBYLVhTUy1Qcm90ZWN0aW9uV0V4cGlyZXNdQ2FjaGUtQ29udHJvbKELUSqhDV8QF3RleHQvY3NzOyBjaGFyc2V0PXV0Zi04oQuhEF8QHU1vbiwgMTcgRGVjIDIwMTggMjI6MTA6MjMgR01UoRJaU0FNRU9SSUdJTqEUUmJyoRZdMTsgbW9kZT1ibG9ja6EYXxAdTW9uLCAxNyBEZWMgMjAxOCAyMjoxMDoyMyBHTVShGl8QFnByaXZhdGUsIG1heC1hZ2U9ODY0MDAACAAbADkARgBcAGEAcwCGAJkAoQCvALEAswC1AM8A0QDTAPMA9QEAAQIBBQEHARUBFwE3ATkAAAAAAAACAQAAAAAAAAAbAAAAAAAAAAAAAAAAAAABUg==Q*_Mon, 17 Dec 2018 22:10:23 GMTZSAMEORIGINRbr]1; mode=block_Mon, 17 Dec 2018 22:10:23 GMTÒ+,ab_NSMutableDictionary£ac/\NSDictionaryXtext/cssÒ+,fg_NSHTTPURLResponse£hi/_NSHTTPURLResponse]NSURLResponse_NSKeyedArchiverÑlm_WebResourceResponse€    # - 2 7 Y _ z œ ¾ Á ã æ147Y{~€‚„†ˆŠŒ‘“•—¦²´¶¸ôù(*,3;FQSUWY[]_aceprtvxz|~€‚„†”¡ªÀÅ×êı#<V–˜¸ÃÆÔôù ).BFZhz}“             n              •_9https://fonts.googleapis.com/css?family=Open+Sans:400,700OÖ/* cyrillic-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFWJ0bf8pkAp6a.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFUZ0bf8pkAp6a.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFWZ0bf8pkAp6a.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFVp0bf8pkAp6a.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFWp0bf8pkAp6a.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFW50bf8pkAp6a.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFVZ0bf8pkAg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOX-hpKKSTj5PW.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOVuhpKKSTj5PW.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOXuhpKKSTj5PW.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOUehpKKSTj5PW.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOXehpKKSTj5PW.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOXOhpKKSTj5PW.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOUuhpKKSTjw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+Xtext/cssUutf-8Ô_Mhttps://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFVZ0bf8pkAg.woff2O"¼wOF2     "¼     A  "e                       t` L
+é0Òbƒ< 6$†l ƒZ„(3£¢¬ñ6EQª7W‰¢LN‚ì¿$h1†`íàÕf,0DQ‰U™}fí‰ªª
+Å1n“ÑÇµD|á…Et©ã}çü÷¯„<ÄÆH<Ê¿ïO÷ôÜo¹rX”‰ g[?zŞ‚mv6ÆÚ
+ÌMEØì‰Šˆ‘ØX…Q`ôD1Ñic¢³u³çÖÿ‹Öwı¹çysÏ¯“ô¦ıa,š‹1£Wî«_êz­ïõIÚ}’å#İG®(©* ¬rJnš´ÀEIå¦é·à0N1Û_, pd‰ÈCÍãí×VÚ·)‰l’W0™n+”pPÅ¬œÉ}:ßfe}ÿ—­!Œ%V)V»ú@,išµÃv€ªäˆŠòŞµyW¾×³V-JåÀš
+=^†2áë÷Á’ùğs•öÿÅÌ!–È‘0%#ëjLş›l2? Û&s˜™%ÊİdRÈ®-;@!WNöH]+L%1Õú@T+¬©/T:“ÆÙ|_[€ŒZG*c¦9+âğ%400~ímòv)éE.ñBŠJ3xe¶÷W?µËry*/“Õ”„KaÛ"@^Z¡Aö6Ïs§JóGUŞUl“†“¢ ƒ_Oâæ9‡a†æÍıñyòR”$9Êîã '[Gj‘•cìÆv6ö±›élÈ9ìb•ã¿u€T 'ã®Ï9Ù5O9oª¶¨ĞEû¢6úb
+P —¹e¢r^%íV°íÀzz&@E€à¦>İ¸Íë¦]NòÒ“…[vü/
+§kı¨Ÿ¼BÅ¡ÒP9¨"TŠ®HªØ_¹	*f®j©Å¶İrÇ%W ¢PÉËéş¼~*»?nË¹0Ö†I™¿33o¾>°OúêE}¯<›ÇF‹Il/'¹ÉGğ?¨äs@®’ßRŞ7RÑ7É­Îhİ:‚Gg:¼…áU†.SÔq€+”îêJLK”‹Vİ´‘ã<…­ğ?V1ïv,Z•kçä°2œV£7–:'n‘Ï
+9Î×QhØ1…™å1+Ù7šx¼/aiun‚Lmˆ™^G çÁ–5‘‘ƒltim´<F»Ø8»jš2Ë†Œ&’6bËµugÛq$8T´Òqè8×ªVc³èò,ÍõHfæf‰vÄ¢Õºa}ä0¹Â1 %€ÖsíKĞ6ÆÙ-Ñ3B°«GPGæ¡K«GdZnŸÚ÷Y u¦T}¾\å¯bLa­ ‰;±»Ü¬ÃØ1Q¸‰$`¸~&lAŠ§¤EŠÔ‘6‚²ŸVmÇHUÍwÏŸ,ú…X÷"t†¾Ò"0Š¸/Aë-qˆœñóèº¨é‡“¶Àş›¬¥µmÕĞlèÇÙFÔIÇ_Ç[ÙP@ô1K+õ 0Ï"’¦4r0à÷¶©ö@wô›¾v– ‡s(—ËÅM©“é2;Z:ªCG^ªz@§Bf"†õHäB&t(ËÖş³¥GhMPWóÎ¦•.ÚÔ ”aâié{PÕ]•ŒçYF,£Ã¹W‰Š‚¼ö˜,Œrs Æè˜tV6º§>ÈnÍ$²Â! †jĞÓ¾UÿTîŠ¬²aZ¡yaq†_4Ä¾³N€ p|·9ÓùÜIj[&ğ§ád±‘á“o’‡a¬û»Ç‚!q'˜ã'CéWÉR«1!Q	@¶UQØÆ£º”s~ ¶Õ"ıîÿ?‘xHŠš2ÿ#üîJîuTZtÍ	 S4Ş¹[ÀòÑ †"ş—Òyü“„jƒˆwcìœ	UEB¶í­Êëc/óØM‚[SOF^Ìª!UÂ;eæİÒñ”º÷féşÈ%Uy/aK NäV…kl	àûnŠ,¬á¾ŠÜ2 EŠÆ-C5æT&­`kí1d<jx•öhiÄå³Æ¡íØö=Ñ3OnÔËTªkÈ­ŸJ›p’.<†ãıçjÛÇR9ÈZhº(âk~Še%O´2pÑ¶#/¦4Ô©ÇLbL‘Ë3Æmşa¾Ôkñ5|c'Æil‚FW\Cèb1Ö¢d*©‰Y]B;ÛF’#Œı¡'ÜÈëA£CEY%Îè„ Ÿx¼Jl21œÚÖßdÑ¶} 7£s‚íD!“óØPn•‹äTfíÇ}',ÕÉCòŒ‰Ş÷±¤uFXb¤†@ÍÓ!MšşT n€*×ˆ½"kVGÅ­²mR3¨7j-æ›Í|ÏœLA|qQQÖLs=ê©ıÈHW‹fÅ sJ?-ÙÊ‰Ú?ñ~Ğmôzä+æÉÓŸG1ñÆĞà+9‹q‰ÚÑ´r¸Úë®­Ü[ı[û£×ÇhúYˆ›t–i}
+åd*ªWRz ¢¡šbÃ˜07&èúîıÜ\Uµé™¦X˜–´N|¦É²×€¥«£†ÀÜÇÈn5CSe¯Ã©+µôaî¡pÍáÇÔ¦ãÀO1ËGÏÆŞåOŒÓĞáğ rvÊ"éJèKõ¦JYRîµ°èCF¢×„í7ûñ˜¢Ö@*¨«¯DÛœh"4Ş˜f@M·2¸&l\PÄÄM8MœyÏ¨ëÙZ@Ác/@×Ï87ƒçÅı¢Œ†U™ÁÖKU4ÕoÙXI^sOÍkãC&—©T0ºAÆ]Mæ¥cDQ!¹r«‰©È¤¤`|U†á”gF
+9‰·%7Û¢çÇš¦Ú7ñIFïÀ+ÊİOÀçSÖd+\é)~áOôğgcã_Äè÷Ÿa1iŒyT%í·%¦ß¯gÄRÃ×ÎìbÔ@³¾eç-¨6lG‡µ{†õÔ¬–­4îaéÄë¾Kâh>¢İK)É€µx8ûÏ¼¤¿ù,oØü€k8R§)ÓU&é7b„­ßìÜ=™ÖYşCö$#¿è…eH¥ƒ.B/ûVŞÉ®öãA=2l†z¯æ
+XöUĞŸÍÆ3Ï¯æ,ÚIâ%KNÕØ/7–-Ì+)8ÒºÓˆH“•WÏp+¥#Y!8H!Ÿµ}Ë…aFK\·œ\´Õ‘ƒğ,¬¼’Š¯–Pªa~Dc	ƒ¶}¼#v0ÂÅA/ø©†ï†å†‰°Õ†;3¦"t[»\¯6/)“v4ƒ„JÿÈQÍîYUoËù5!Ë(÷`í„S4kn´h”"Wl[‚“"î1~µ†EO§Š_°†¡­†(ëWe" ÑµXÖšh½s>(oĞôˆF 1"Êó_6¹A:ıÙÉàÁŒmï{ätp6ÅÀSìg§‡{²fab–£•¢¢åpĞ¡ªUÆY!<ì=Ü–àwf³.Ã(
+Ú·£9utHıŸÙ ¾çÄÀê&¹Uû—/m²g‚¤6Şº¯ĞÒ<S##Ñÿ`Ü0«$p åwÎYç'éİ43Aat‘¦7Á•ïL¥åjš„—mŒ“ÈBà
+Ô5òí¸³dLqB™jcEj7–{6€dÂGœ4Œq µ¸˜¿5Ì~—õ<fOÎDºÑQáºûä6ª£/?{³‹~‰™Å˜àìE#ÈÕzõ|£ğo‹”@¬›[¦å”‚ÇÚ¥œí!È\P`ïµèÁu89và,ºX=¯¨ïª‹i'Ï_V¿®¬h8€õYt;9ÙÑúìöhçdÑ±ÙûÒ,(¥<ó)múpQª5Î¬â3{UefæâzË20gìëâåÃËøÜTÏèŠ2Å»©ÇÓò1‘×Ç‚œ¼üä	ºµË]Cmwè5áyŒFÏÚÜtº°·©T~•ªÜëÉ‘xÂW|íñ§¼Î9`iòÒîV´•-”ßıvVÅ*œi©ì©_üš<´ÕŠ®–ÂéªÍ³oåwËÚ*ëïaAÕÂ’(±ñ4éŸf}^C„fÂ×g³$iÉñÜ(ÕB | ÒXØØ[ÔK+¤õ¯“7b~dlºx
+.€¸ÔTPG05@ëê¡Ğ¦ÆÆfº“›àÚ8SNˆIÇÿe “ı§©§ñ?>}ÏˆË8‰ıvú#ş9Ê¨F®ƒ^­¨¯_­@ï¨‚­½—É<D´áAŸk,YµÀËn‘‡F¢ë´Ëpñ%ùø6ı [×V×é½÷û£EvŒt gàæ+ïâÆ‘2)ÈPÏXåìoü¤9µ&oõûš¾©*|måe•}ëµ¹á•É¾=ˆ3\´;æƒ=ùèãÀ´Ú?´o¶_¯Px:|ü0éMïDÃ§i£ È¤¿…¼Z	eûõ3Ë¶ÅìêVĞğRçm­DŸ&Iç7úë-˜qÂ€3dÛ‹E].³øøS_W ²ïtõÅÉö«?9_ò:}X/mí©¨è¬ğ¨±pËÂ„ØT† )Øk)©ú»X(P¶6Şßéˆ ŒTbGœj¦R™ÿ=xúáŸí™àE6‰Œ˜æ3<$$:¥®¦³(Å¯¡vSmD¡]iI/IôŒÏn2.ÕO(ğ*O &8Œ•dz¥ÌN,øì›2Ÿ–ÀÇq—¸¥—ow_ıâÙ­yFMTø¨QÖ0ÑQ^ÖQ…§Z¸fb#•AÃ×<—š÷*,õ¼ài^bB1=3`RşÅàİßÕ=¯Ñü¨ı°€‡èQĞV '[ÿĞ„äk~Æ _³•íñ½CĞÊñæµ~¸¼8Ñ1˜•jW£à«©—;ãoş`ºÏB1ÊÊ?=2Ğë#;¢lşæ…“–º~lÎ
+u‰á³‡(¹Tû×vooüµ€îE‰	Rğ±÷ûÇ«.\¬yn19àò;ÜØ\cÿwgÊ<î[xyi0çQMÑ3pÜŸÁ´FµzşZŞ¹¤sÓüŠ3¹røïZíö+ÀfÊä¿ÏĞ=+Pg¹4!å¸¾ PÃ¼-Ï10C.ï.å³Ö­@ŸşâkG‹2nÇä¦E,ü-Í¯ÌgfNÄ8â³0JDF@ç¯úå5u:ÏM½ó/ºq7'¼éÃ™WtÚ gòû°üŒØÀÅ\pNNs“––•øY¾£	Wj .¦FåØ»Ö[œˆ½ï¯‘ˆw7@.ıú¼NTøÖd[øŠéâÊxûål\³Š›àW3W†ÂE©årKæÀáô³ç<†Ş(ö¨^ÀËÛ£sÅ& 81öı ®î¹ù]ğş±à
+5Ï0K¿£ÚC–U
+`ÅíE’Bö2\!çêÛnß­$¿1!RHæ¯cl;7‘1;öXjômrá˜a”á5\€®AÄÏ)H›7ü‹§>ş¦Ş…¡A>ùh}¿2ì¯Ê¿ZŸ¿ş„«*ıĞüòõ_-€Éx¦~*ŞoÔü>R¾½ªÁªh­˜-aÍåş:ˆıN¼kŒ'ü”´ğ«ÂŒóñİÿA«8Ş§r° âr–ŸfÅ{FWiYEoæìS€’¥,ŠŸq™t¸ÃÔB{ûn­|K*[ØÁõÖÿÖ÷1íU«¾¼:bˆµ¶o}¾æk‡şiPÔ¸dvê°u;À¡†9ú÷5)*óï`ïÔÄúòÒõ•ÉI€ZeN@¿3»¡«L†Ç¨n›l½|«nğ´İ—‰‚(Ä*‡P¶Fã¥—w»E™ŒóÄ<Y¡zq&rğb@2ã"Kƒ]º\‚Ü:@a€ÚÅ|r™ñúŸ•;3a&‘&ã+cÀàåÑ¤tv¦v¿†41o
+P4s¨gõó³ÇY'¢LY€ûoV‰,àz.ø;™r×™t9.&Ğÿ%qÿLME	yZ€ÔJ|góè¶ê7e7¸ÂÃ(bd>ChKË` GhÄ!¸›Ò>ÙÕ`}ùÂ.tVTJJA?N+Ã^mî·23°ğé3©a¸§> “{•{0‚èáT_y<8U<şLõ~ø°­¾ƒ€\q"à¤§dòBˆí[…½5KoßÖ¯õÖ×<Û»_³‚®œr*\¨}·»-»¦U”%©eÛ»ÙvÜRP¦W©t[ªxãè¯Oa.ü¡vÿyBë9n[ë9:àÌóKè¥NŞ“O[ë­¤½ØÙ¯?W¾Š*ñğrj?¹÷Çùg„¯œ“ëİ#ıÕ®°F(ïòëœÆ¾su†·‹è@ååºÈ:}}ÅjYß°ÚÏ•$§šã#övO+4¦‚XÂ¦È¨ZŒyëãùxAÛùš…ªÇÒè\MS~Nôø]se`fQ¬RÇîº‘;ZÅI.¬+‚q¼´æ‚¾"ı¸×à‹÷6ÒÂİ#ÑÔõØôp®vbV<éë§Ÿ?âÓÓAÓjnr6y iú¾!œßÄ±s"Ÿ¦-ÃƒÄÚ˜Ûİ.t,}LY—¤ª\££S«¬š T?útç¡¯˜Úb\ÿ¥Ÿ¡ùÍ½¦GƒÓìwõ÷KXŞDb‘¹ÒÂiØºCW›'¸T¾/àoX+£É	U#wéÏ'›ØX>udDÇæ‰×@ÔízİÃØlï@4ï$NMÎíoµ°º¿ùÎıv-û	·Øµõè#8wõ´êeA*Û€ ¿êé›óp$œk¿ëq{{÷£ƒ½îíG`àŠ
+<v~—e:àFæ	×@ŒÜ{ì¢}R9wşLõüË—İ5wØ6a„8¦Ò–×›w[›zİç>ìM«gH/T;Ôi…‡'*üçş¸vÿ÷¤^‘šlÀ¤ò™‹£U´§Eƒp½éy$eæ¸Õš-¸¼	1ë#m¸ZıËÎ{’Ñ4[%Æ5'r‘£3*Ê£ÅªsËéf¸UîCÚÜH·¹^n‡inB¢…ñÕ»Ú%È%L~¸Dºê ÙzQõ¦]ñmûF´Ù{ß_7³nR¼@p»Ì¼¦é#Ô¼‘JŞGÃp&m¬Íîİ-âœØÑv/Ï™B:HÖ[£g? ±AVEìB”¥¼ïİZ¸ÌÀ£†x,!İšÁc™¤İw…AÈÕÌ=î¿ü&4Ó„g¡í2íÓiÂåš3ZÓ×§g ¨Šı#Æöè²7dÉñÇëÔQ)Òof“S´|k‹‹”ptvŞ DJÄÂ\àYo³^b¼À£<Á$|[ñ,ÛNM#4İ-©$‹ˆ÷Õj8îc½æZT:~¦(Ğûé7‚% ÂYxo>¿•_pMîÔkùÅ{d±•¤¤»…jÔo÷Î²G±ñÁ*q‘‰1W€ÃÆõçº€ˆrtŒ„ÌXÂO\ãF¦‘[mPd)6j.c)ã.#p e½ÿº¼d}Œ>›Ş4×E˜ƒá³Ğë•\”{›2ÿş·È°?¯Ã’½Ê­Y”£Ùßºÿğ°i³«¤D¨v²æzp9õÖe©i©ÅJôLúÓ@T…š«d[ıÛóµÌ5ƒÑçÛ`b?Å",·ÈŸ›‚%gaós¼ñ”‹˜„l‹`r.ŸŸ„ÉÌÀææàñ9ya·Rc›I¤ÛM±qÍ­q¤Æv`ş,åş 8;w¦a¯¡[Y CÀ Ó ·ˆ±bô©†”|-á-1ç|%\”sò½ÂUï&I_E$ÙO1WÜšDÔC¤àêoÜ1­©÷p(¶P¦ÚW¿§>ÊDUÛ(,^uÌ-¶2Wÿ+\7NµAq7­ğ³É¥°çÛEã*£'uL/;€+Î±H˜b$RËW†Jƒ¯•Àìı´åÓshİ­Ù.iWÓ¾J`–vÎì=ù>+^_7>\ëFvcİË‹µ¹áµÎòÚ\]t÷ÚÙİñº·äº:0põjÿ ÊÀ òğà€Šòàğâ÷¼@ÖTV‡÷-ö‰ò®íà"q(QªC´T}bµ)äüĞä•¡éÀîÇÍ¬kĞP/¨wÆ¹¶PÜµ–„–ö’ö&a\kI•È…ŠN!ØODØû:¢¬œQ^a#yöN)ÖR'…İ÷üòü«S¹è´,“Kúí</£‚2@ÿVEfŒ“ÉãŒl'‡Ò
+œ™1Gv$Å:ØÇÅàœbbqq± ØÂ3ôãk7g_¨Õ´ÚéCÃ]ÉQÔœÊ¬{·ÚÊ‚I „|kïl*<¤Şvk¢´›JÔN­4M=h«xâo‹6´355‰VC»*ºîß˜ D«¿ü5$ƒÚRCÌ~ÎiÜ¿úšfQtl¾X%_ıu­+×‚¢»® ÃÆ¸‡Ü){N6ÿú‡óáï®º}C´
+mŒ¿ÃÆ ~TB-b#l]ßÎ^é†š-2â¢ëHÔ¸1E c–EPLñ\îÎ¹Ş&>@íUtG/³¶²ûNk{£Ú1ÎÖšâ‘JÀ'§¤âã	!ØĞ#¸Ö’0ÒŞÒ^$´ëGåøxMM"Å²Ê—D0°µÖ	ÌI±¯ùièå®ø¬ÍßéÅÈ…¹¹9xº¢ˆ^2cªyÉú†h”1FÛœŸXèEpúœıÅî°Z'“U‡>–ª•G[.îÏ' 'ï÷Œ)´ZZİ¨CjÒ}Ë™Z›úcÎè­P}ü}ü¼|†v~Şxï@ÿE‹O@ ¯0ÿXô*N´¯YŸ›½F/ßÜD;BÕ<k,ìbd½*#ÎaøëO¸a…*w`½ÊÁÛí!ö5¯ºøRıDfÒÈÛı¯—º§é/Üı‚UÚQ3[°¹Œ«¿ä•Æ¹ši›ÈB{0:6ZEŞAA-‹½c3ahÚ›uì1ÓÊ1,Ò,ÃÁ'ÅÉMÀ -uŒÜ¯Ûç9e
+>gĞGGO=»÷[#ğRoı9úÏ:‹˜’XŞ†CdX(¯!ıÉ.ÊŞH×^Ÿ¨…·|ÏÂgy
+õğr8ÅjgX54H6í}Æ
+!·}²g Ö'ÌÍ­¢«›p›ûO{„ş¾Vra'ßmÆÌ.€‘Cˆq^ûùLXàÅn®'/’ˆ:GÛsçiØğw9xC/M4©dyR`v/¡®´£¤K¤j¬§Ñ!´kÙ6Ô²BŠDúo ›ôt‡È{ß^*¯K‹FãH±6^ä[u€İß{4¢.då›“Q‡Ôü«´K±DÆµwÕthì’1Z±íİ€P6ÃØ­Ç6ìø5~³«÷Ÿ%·Ày¬¶è }$—»¹xwİÛ†
+ß7jWíú:g]Àè+æ¾ùa¡x
+*Ø]ø|Í±R­’¸şÊí¿€¦’
+Ğúãw‘î¾‚°´†Äİ„‚çüš^.µÙÛ	†±ºÑóI¬ÈÂC|Kï9ÅjWÅ:›/ºuºÚ©‡{Oi‡ôêctÌƒÌòvşÛĞ¦ìvpqå,#/(3”î‘“–%’èz#‡œGqDÖÑ¨JBpP"Éß?).0(5!ÜKÇØ p¯ÎŒ.e àèÇj
+¶W±
+rZjOü’âòñêÎ
+6WÍ ğ¿O’bòÃª'u}âñ€
+Øq‹ãBî~üÚI©Æÿ)ü Wœ™¯ÿm·I1“”9«oğâkíûÉ<©RqzP_•”ß=¥#^íät± c„€'hÿ˜“A ¦¦&Æİ
+%;å»I~=o¯ü©Ï,so€_7²­ü•% Š’ÜÉšWÛ\ém¤×V úN × =‹*v•ÍšÕ¡È)/ÂêğÅv:«ÒSj¦‚é››•Au&EˆôóË¹\–V	O´t}×úKù\0;7 ¨"89ÀÈ€ØÑl ¨RşO,ùÔeF%/¦_¶Š€ôHÓçÈ#‘9vE Twı¿$4 0È³à$@ÛtA–ıÍÎZR.®‰Ryo&¤n€ËIóXªü,šÁ‚vI›ì0¤ß TÓGàÎô•‚Õl5€¼›ë /º33‰z6Œ™ÜÓl[€Ä:ølv§_ÀÒÿC™ì®¿&Ìş¬òür8èg» $Pÿ;$ä:kÀ±A
+wÈ
+ørÃø+C"
+œÙÃ õÃ]z×p©/'|¡À€°O3Õ?«qìa<ë3‘uÇtQäô@¼5íM°©Û4"DC»AÛM+ŒÔ×¿YöŸ('áTÛ¨c	Åfµ²Ì
+ğÏ‡IİÓD|¥¨Ò°€kâb¹F9¬77‹ÁìÌ–@ÄÅsQóñ†ôûiæRîĞvM‡™¢bî`XÀï°înYL§‘t§ >‚«(‘Èåw’sÛİÈH¾¬ĞÆ‰;Ftıª ÉpÎºú§òÇ`Œy¨®;3,bÏ.î XèoôÄ%’SbOBØõşœA_HVvË¨²¼“£—e÷ş>áZIÖ"c’¶„u2> ×kÔòÀ°RêïçíÍS>Ëà_NŞœ <ù‚àõçöQŠ–9ÊÕöò…‹	ä\÷¿ë¸‘²S9Û†÷¹k’Õµy´UP×u”QƒH•ì]+tÅÖ*J{ã¨ê†Kzï¡õ£®âÔ²¨}†`Ìƒ‰ÎĞ@êMÕ(%ÒP–»A–ôDÿ(V4.y.¾Ö°x°Bt\–èy»RË__{¿R”°nbCĞ¬/={L¾ôH a‰ärş£›Ê2ci±… ÛÄ±ÛĞû=".ÀWíM§©
+BÄ;o¯D%3Ißc3IÅ¥¼7ÜÜìUV¨0ÄJ†tb‘²r„8ù¾ÍğÚÖdÔ£ë;D­ˆN)Ôİä¸ ´K¨œz½ç´UÉÙŠÏ9jDSu™İ‰ÈÒ¾šêúîØG0ëoó!9âuBrE’i¬ƒ;!;û7†ÇP¬Ì[j,åo½ ×ßØoCVLÕÄW4¹]aEéğ|ßA5³NCò‚ÀGÙ„ı'VşfXbW’öÓ ’-Íáchù”U±’$€‡ìğñÀ?¶½ù“~
+Äf¦lgE£Ä`ğË-,OÄğÕ6ïC`ú±³c v4ª£}ñeÏßäWØœ!…µzà‰GJšÈ× õ±pqî>Â… Ÿæ‚¥ €ä'r2f1Àr3€j™PXÜ2%?«–9šª\fT¶¶ÌSÒ»eøåghA¡„%­š"H è4?$F}D‹‘,.ƒ†P=´H‹&xä=¸« ÌE‹"B(SÑâÄX”âZ3Š:;1‚ê¡püŒAä.
+/¢1œzY®Ï‹Œá˜ªùªåÜÊ­AC„xQènZQL—“vz4ºÒD®ä1Ö TõÉ±lª‘%(Ä‰Ä‰ägÍ‚)3¶p„âêUŠöZÃ‚şˆ¢¸›£şÕ#'¹ÈMò’ü  K.»Ba"D‰'A’i2 dÉ‘§ F‘e*T©¹FMpZ®»A›]zô0t“c&L¡™Á0‡eÁ’k6lÙ±çÀg.\¹qçÏ“o>|ùé×.Å¬Zïä*Uä¶ÅÁêâd¥*_|U¢N¾eÏ|Ö¤×wßüĞf ËºAş”´%È†Mï;°kÏg*ÜwèH¨NC.R„(-¢ÅŠ‡(I‚D$I‘,Uº4“ZeÊpK–ONM96lÄO=4jÓ„ãVåé3gŞLq‘UÜ’CrJ.É-y¨kÇ¶»î%jvDOü‚¦¦qWŞè9Aq·éœÿäŒ×ª1&špŸÔ¸&G½Ê«ê9‚€…d  Zfont/woff2Ošbplist00ÔvwX$versionX$objectsY$archiverT$top † ¯%#)*0123STUVWXYZ[\]^_`abcdefghijklpqU$nullİ	
+ !"___nsurlrequest_proto_prop_obj_6___nsurlrequest_proto_prop_obj_3R$2___nsurlrequest_proto_prop_obj_0R$3___nsurlrequest_proto_prop_obj_4V$class___nsurlrequest_proto_prop_obj_1R$4R$0___nsurlrequest_proto_prop_obj_5___nsurlrequest_proto_prop_obj_2R$1€#€€	€€$€€ €Ó$% '(WNS.base[NS.relative€ €€_Mhttps://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFVZ0bf8pkAg.woff2Ò+,-.Z$classnameX$classesUNSURL¢-/XNSObject#AÀä,³S › ÈÓ456DRWNS.keysZNS.objects­789:;<=>?@ABC€	€
+€€€€€€€€€€€­EFGHIFKLMNOPQ€€€€€€€€€€€€ €!€"\Content-Type_Access-Control-Allow-OriginSAge_X-XSS-ProtectionWExpires_Timing-Allow-Origin]Cache-ControlTDate^Content-LengthX__hhaa___X-Content-Type-Options]Accept-Ranges]Last-ModifiedZfont/woff2Q*W1044892]1; mode=block_Thu, 05 Dec 2019 19:55:32 GMT_public, max-age=31536000_Wed, 05 Dec 2018 19:55:32 GMTT8892_¼
+
+YnBsaXN0MDDcAQIDBAUGBwgJCgsMDQ8RExUXGBocHiAiXENvbnRlbnQtVHlwZV8QG0FjY2Vzcy1Db250cm9sLUFsbG93LU9yaWdpblNBZ2VfEBBYLVhTUy1Qcm90ZWN0aW9uV0V4cGlyZXNfEBNUaW1pbmctQWxsb3ctT3JpZ2luXUNhY2hlLUNvbnRyb2xURGF0ZV5Db250ZW50LUxlbmd0aF8QFlgtQ29udGVudC1UeXBlLU9wdGlvbnNdQWNjZXB0LVJhbmdlc11MYXN0LU1vZGlmaWVkoQ5aZm9udC93b2ZmMqEQUSqhElcxMDQ0ODkyoRRdMTsgbW9kZT1ibG9ja6EWXxAdVGh1LCAwNSBEZWMgMjAxOSAxOTo1NTozMiBHTVShEKEZXxAYcHVibGljLCBtYXgtYWdlPTMxNTM2MDAwoRtfEB1XZWQsIDA1IERlYyAyMDE4IDE5OjU1OjMyIEdNVKEdVDg4OTKhH1dub3NuaWZmoSFVYnl0ZXOhI18QHVdlZCwgMTEgT2N0IDIwMTcgMjE6NDk6NDYgR01UAAgAIQAuAEwAUABjAGsAgQCPAJQAowC8AMoA2ADaAOUA5wDpAOsA8wD1AQMBBQElAScBKQFEAUYBZgFoAW0BbwF3AXkBfwGBAAAAAAAAAgEAAAAAAAAAJAAAAAAAAAAAAAAAAAAAAaE=WnosniffUbytes_Wed, 11 Oct 2017 21:49:46 GMTÒ+,mn_NSMutableDictionary£mo/\NSDictionaryZfont/woff2Ò+,rs_NSHTTPURLResponse£tu/_NSHTTPURLResponse]NSURLResponse_NSKeyedArchiverÑxy_WebResourceResponse€    # - 2 7 _ e € ¢ Ä Ç é ì7:=_„†ˆŠŒ’”•—™›¤¬¸º¼¾'-09BDFMU`nprtvxz|~€‚„†ˆ–˜šœ ¢¤¦¨ª¬®°²¿İáôü %4=Vdr}‡•µĞğõµ½Ããèş37KYkn„             z              †Ô_Qhttps://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOUuhpKKSTjw.woff2O"`wOF2     "`     Aà  "
+                       t` L
+ëÓ<ƒ< 6$†l ƒB„(]3³¢~°^V¢(‘“.û¯¸1íÃì¢D8 Ç‹ÍŒPàˆ’âÚdËp&GãïZ­şi#ĞJ+­ùÌ£Q¡±kryøwí±›ä%3í" ª\D’@ öT˜Êbô'C°ÍNÄœN«ÁšQ€Š  ˆ6b€bÔœUsÎèY«ŞYÏÂÍ©3—åªÌ¹(W?ê|{²Í“'Í1MÄÃD KùIÛ|všØğûwKîßL¼e—ğ†é\öÏÖ& ;ÎÛJXêkÅ¸hm¼jªk±rä@Ûà	ğÿ¿w­(°À³ß / Njù[w¼Ñúûïu–­¾aF¾àVLEX*P¦KÓ|=Áúëë¤IËò‘í#í±s${3#wØí¦*Szb®Ã-`î³EÑİ¤èîŠ²J4—K2“¦ö©áäÎÌ Ò(²"³"w¿ú„.ËÙL_'J§T…Ô 'SH€…š£æO27•`â;SeDà´£SãøÕÓ'G…é`ší#µ
+÷F’2zîäêngŒ‡û öm±oô
+¸}ÁºXÔ{«9Vã(oŠL¿Çœ[©‘s\¬Øë6Ÿ+[ìÁÀÔšÒpµ	©x¬Ìş«‡ âˆÊ¬N°Ï[5“ß
+OŸ;¢\—]÷O “y1?ÊWG¢Qª(”Êå‚JEkHlDå”$í®¸÷'ƒ’G)Ïgó÷ZÿZuÙg‰÷ó½¢óf»³ïgo¿xÙ†èÕ \èóµŸ^ Ç–óf£¹½ó"Ÿ&ÒÜ¯ü"+óKoåË!‰¼0"ƒæSTÊ#˜Ê´(•H­T„²ZÜ”ÎñT7¸x•Tß²ôî]eà¿íK5ø¢ŠY¸%ßÃ7ó±;µÈõãà˜_j£óŸÑ^—ì€ß¶³­°OÉ;n,PJ¥ìİ26×°Õœ2.H
+?É¡©™NMèK–œÆnÑÜêMnh®PÍ}È“!ËxòÈ>1«8YFä¸»LÆÜpê;'àj³âø9imæ")[k¨$¦›7	ÎñœsÙ©œşß=­@ÉêäÎš¼£xg€Š¨`‹äx&pC(¤µã–ñÍ eÌ`€A´7xznRDû8I3ªÏ»üµ…MÜ ¥  Y¡\‹¾«‹‚9ÆÁJUhÇ¢ÍHC¹M>Ë)r„^ÌÕğ)²µ nâ³6	=i]iP¦bW©Z*ÌJî÷êåßòqFº &ËÒà‚Á^oxnÀ¬…WŒÂÒ3wš[KİvFõºº?oæzcÁ¤Ë	ÂÁ…¼‹µì3w/D+FÄä./1n[A ¾›m‹º1ù5J¼ÓbAYSf^á
+Ã²˜+à»ıñGP´Leï²öÍI´„p›Œd‹=‹ÏG‹dòX'tÔ†›õ í4»·ı8Ø;§†„#~¤s{Ñ`Ø\¦HòÑt;Ñ´õ›dÀŞşlí£Ô’ft©ÿ ­4§±Ë¹Ò`‡å3§±‹†¢ï)Xÿ2Î²jƒûJÁ¶íÄÚIIçCØ @†Š.NZ,FÓÚ÷¹Mhñ»éQ|uoÿû`l oöäº?)Ñî®ZÆü€û ^³+HÆ{å]’«0è°l¼)fÅYNÖŒ‰¹B;yUV‘CªÒ^ŞÆ¸¸·Ñ_]¶¨Mâ´yR|åÈ«äE¤° e é­¹‚DµY$+^UÎ 	uá¹¯˜ÃÓFj	äw%k<§àşà4s¹6QÍ¸‰£{ ,Ò¹\ŠÉ3¶7Î6§¡šŸÑÕ–VŒZË8i«T,ùÓ¾÷&js¡®€ßëUÁ«û³¾µ^k·ãª¥p÷Äª¬qã¾V’‘Hdlí…¥!±á9wÑù%ë²	ÿeÜ%_d¤¼ß$FC1Éc9¤±Œ*¢šÈÎZÆÛ»ãm$cN±H|NÈ$îç€xŒ£aÜbmú£ĞLZ	mES`T»aÙj@Qóµ5µ'ÃP¨pO'¼”Ptnİüx4‘øğç:9l8wyÉ‹0É5æê°®…%É•,(‚¶„cjZ,Æ—DMÔ‘İ¤L"Ğ.’$PÌŞä»õ3¨i^ÿVï÷	vé+;'ÁOŒ¾aë.E5+ÇÌÂ¥ëgF©Å8{Ñ X”áqÕš’ó!;ÈÅbY9tË*©¡$–Vƒû±Hx‘ü¦¯t»¡Û-.:À|†ûã‰Bˆ =l¶²™<ñòªØië<æC›D&u„›õ7—¢éºûAS”z‚fÍì8ÁÎläX^Áªh·N5„ß*È¸	¢’"+š‹¬˜+ö·¾F&r½õy©2êôzÈT:“ù¬­=——|q_Fã‘œéËáFÑëŠF(ÏQì{”İMíkÃĞ2B2c7cN9€ô4F@Nº0!FZmsVà’Y
+3DNü‚Ó.ZpÖĞ ‹ñXóWæ£àx±ğX€ PcıÖîò±VÂFâ«#r€¨VRá9këëdd<é2È´6>tØ“š~ŒcMa0-¡±r@8h¢L§Iâ5tzQÆb@a	Ué¿÷İ>´ TÍ_ğú=ßháèû{AQ+¥Ñ\h÷ƒ™ØUrÀ¤ö8G?ªk'úÿöPÕéå…4ue>=m®U>üÅ%µ¼ğêºƒÆ÷L*f°‡ÖåùôÅü‰º­™k µ¬CÙø·~°|‚bÓEÖ†°ÉâÛçm•¤T€…ub€<éÜ§ÿÔ»	b¥–ğ¨€²yì^ëûÎ8`!¡˜õŸSOæÏÀú\ÅôÕå×S†_omˆ®1¯m”^àªšöæ‹:X6K³¯,¥«MÆï]EÁ p(µ\ÑÔ¦ã=…%²ŠÄ«rut¢¦8çl‡ƒ^»º[6K(‹:‚É”ƒ¸$SÑR96£ds¦†–ŸCCÎzàÓv[_’`—ü·Ï<|ëÅ=À~_kG¦í-,º \¢‘‰‚^ñ„t„`´Ô$šÌÚ°Hï1Œ2°©ĞÆZÖ±æ`è”†däÙ{Ò»ËPüsE¬›DQw3|R:—­ß¯Ád„¡è¥áíé(å›ÛÊÖÔzOb´ã-m«t¹«ş	Åufµ?®÷Ë¨”†eU‚8nq§!áz½>°CS”ì¸ƒİLæE}ı%H~bçæåL\kı´îzW4|Ÿ $P‘Õ:ióo:õ¹×êÅÇà 9,ÎV¥cë!_s!9“q\èu+åvŒI#ãO…/êË¹¿¬BBd‚yEtõpJ¹ÖœùÁİP•§)âÿbx~ø¿˜ÿİ;óôÕjÆ×öÌ#ö{¨~×  øz{=¿½»À1…lòrMŸÜø˜Ò8çÑxŸØ¸}Mv½Ñï›êä#«jÄ"åÈıÉvn¾|7oòI.Ø•of®I_-[ù=ECø|Á†À¬p
+”n~iíË³—dZÊ_Ÿ¦¯µ9u‰ëÎ‘ºãÈEF‘x¼êÏR¹ÚóFËx•|i 3	òŒ²ÍBï†šeÍ~;öv¸gbóùJÀÀäæÉûfÿówx<‚ñW#ö&úì#BÈHNœ.şøEåÙ…²3u’şhpóû3Ï>®M/›oñWBº¥šŸrÔ<˜<Ã-@‘o~DD.ÇŞƒØ†‰,±$ØÛàÉNvş,®iš§ĞÑÂ­WkÿÛ­˜©¾úåkİrééu-€j]¨íûqğTıò·/ÇøêŞ­i¹áH½„Ô(Ô/ÆŞ§z/´Y²ÚØÿX® ó“¥— ±‹V‹®ôßØ‚UpéùJò±³°æ†<°ïÛUØ©U8y-\ù²|Ùüdp)\ÍÛM€ıY)E?ã¡ y—’Ä™ïãy!"â¡ë±qÁë€jI…†6‘É÷û6œ¹·ÿ/ ı½ŸÜÙËÎ7Œ³óõ¡ûœ øúcƒ*=úô¢Ën²S&R#ÜFÎLMJä ljBYÏ…FMø¨ìÿƒµ·1ëÊÛ§¨BŞ—-9-µQ)Q}>§¶’úózo¸7˜ÚVİYª–}?R¦£¦&¦‰÷õdFUšFŸşpŞĞ@hÑÍ)¢@‡İ{gwëúWc!…/TQªşM–Òû'Ú–yÈ¬L¬Õ{¸ˆ¢ªÎU@àÇ÷Åç¸I|÷—ñ;±ÂB‹‡<šòõáºäzçNc¡Úi6·8+6<“Ã*Î §gwWŞ£7¡
+sŸ€VÏÊ-0İ™˜5RæÒåW5<©ğèíÔå©œâÙ:b65n"ö˜à¬€…‹ozHtJR8Ÿ˜š‹½öâ²g(ÍÅÌâ`ÂŒ)!N®lOàÒå6;TˆÿÁ@2Û–¹sBƒb6ÁMÉV¿<Ú‘|Ûù©© %9[”–Åa•dÒ¬)cª\AgúÓ7ø©­·èĞäÑñ5—¥øÕR{ggÈ~HÀŠ´W_¬ÎIQa¿3|@vNÄÓßU>yM
+¥Wò<£I¸`[lŞ÷È…0Ş£§Ù»×>-ôÄ³O”³CÜÌˆööz>Ô:•ÁKŞ©	Úî+M %¹•IÆæ÷]¾sæ¶¨Àßk(œœÜûr²³ÇÙ¦’oŸ
+^Òï9n}©£#óÇ$Óhæn ,»¿šóıA]ÍkØã€‰)gßÛÃÁ¹ÂUbœs·}Ü Ynåz.qN ¤îVV
+*¯í-á/í“-Êì‹9¬š9P¹ŒzöCS†2™›H	ôÎt/é²Ë¹”ŸÁ‡3ï•“àk	­ÈĞ	ÒS'zaÌë_+şÍ»÷"Ù¿è:=6ÀÏkÛšW|Àø—#Ë3°÷Û{N—Ì 	Àø¤¿Hì‡¿2``|·¿²;v€‰¹¥Ë·
+ãZ…Ìb^xCyÔ‹‘ßOxş·òQüõöÜîÙ0¶Fø†Ët|º€ñ­ğ–@õ?.Eâ)ƒ‹ôË-°@+ ók¢À€ĞÜ¨Â`‘ûBe•ïøÿ9N+·À§ )Í–Në—İìØ+ÛÍ‚Ë}aõæwG}É•ŞÛ˜5à°î¼×“AZ9£¯~©î$AHByÿä^ÀJ~UB£E•ÄÅEçÓéœ"Üïë™ïgR¶¶“ÎLı ª¯à‘Õ•‰¼¸ıQy•S+›:?%K†¸·E¯ó~–!|æ(-äP¥(aoáÆœúò0nt•ßV)fb4Pyğ¤ r¹Àš¸É®ög¢6éÈ¢ò«¿ë~¨zìKŸH…bhŠc:TáKKR<[¢æàOŞ'_³LD³wRM›µIşÁtœ>ÓËº•x%¬ilZMVBhJàó†?ŞYóYª`Jqê×ˆeŞ@é±cÍ‡æ §¾š,ßKÆ·‘2”#£¯ø‰9½œ|¶ğ¯ÿì|L·çæÿ„îõácD'TÑe;ü¶¥±âsmùˆŞÓ!B¦¾—"ˆv©b€O(gè1ôÈ¯?.\ôµ·§^ºt?3ÑTUF…©*£”’œWooÅeÃ‹Û×A2ş5€ï¾¾ıÀ¼ŸiÙ>Ù6K|¶6Ÿİ¾v
+	)±ù5ªŸù°…{Å¯
+/`dñpãó<+ëëÈZR‘¶Mrh'©¨ãô©Áñı»ˆYfpäà$su†³ñâÃÅå5Xš`±`_`ACLnF@¿NY|f!.ûÖti!¡JÖ,sÀ‘˜WÑ&±˜„ÏIQ‡N¨OÆ´¥²â‡{zºA„ŒˆƒŠ’‘ğ\‹GÀA9KËqÛË}Û¿Ñ„„Mh™…ç˜=2¯ÍVnÇw‰Èe‡Gš8rİ¶F<ª›û)W
+íTŸŒoË‰LîéIê:Ÿ[Ãâ2…‡“2Ù#¦úR
+òf?¶„Ä·nBªk#&ôÃŒ7=uÿ×è®D&£¿¾îuaêäõã™&”gAÊT¬ÙŞÜî°ÚFŒLIÁ“»ËÏÂç_áú§OÏk™w»o¶ş­³>"§4Cù•k ¹3ÑÛUÏO;²/ùÔÖÒÓ|I•†ßNqİg¨Nq¦)Ç½©ğÏ” /®¯'7èRo?èÇT~šÌOúï¢ ·ÌA~ ÑõtáòíE l™×ØÛÛHğ¢2ze^¯aXàº‘Æßq•&RÜ|¼1÷Ç¯Î	ÅjÜ0R<`ÍğŸz}ï@(v¾0šYe‘¿ç¸ùñ\2Leí€_whAÃZÓ«’2"øÆÿòïR2¢ŒøÄOÏÍİhvÛ“bô?Ñç +?ipñi5£{%_\¹µêĞ½¼¬Ì˜ş¾ŞØ¬ÌØn4­OJÍ\ ãkE‘Ğ¨´Š© ú•”Á :¹P%¹§\nà¤51=·Ÿa$'¢…fËÄo×âî]õêátƒøG©±ÅĞíÉø¶¬û^ı3‚Ûü¯‹–”~m¾sÌÓP¬‚ 8Éì®ƒXŒ8šÖÁ hŠã!9¢e]gc©†õÎhjyğh2°%oOlg¡Hj¿½uïXÒ{CµÎÅZhç[²Úï×ø¶óÎ¥i¿ U†f­1¹”¨ïkWg[h‘d“ö?¥%h¼J2ë=Õ{úŒR]A_„ßÆÅm›76JXwpZ¯JM™ğNYXºµø¤{»YN÷³5 báĞİâ{ÙN›/Øçs0eKHìbš»Ìk:[µXm.è¡Ú½Ç»l/­p¯¥¤ÏP1¦(A0Şm+Ù6Dj±@±m”Fàö#v`¬F¶mĞzîFn `Qo¥*Ò…à"‘j×R	*[Î#;ÿuxzH~âaéÂÕÙr`0e6ón·ø}D¨Šûå|È-ğóB8¶Ìfy!¹ºÂ¦^©‹­iŒ	º]Ù—_f³[ò~‰U ôLú¹F‰ô¤s}/ÃHx‚¡¨oZL²¤ØKuØ”¡Ï†¼è;oAKwñÎd”|È)¤‡ì‰}Ù8Ÿw‘¼b¾I-ß*Ü2ÇÉÿ‡×†KWĞ*Üú‚¿š_”}£J|âÍNvÙîÂn(İRí?Şƒ(vX'(gi:f¤ô¶¼ŠTÙFsíËçÆáÂå‹stæ›£N)T†?c6}5½zğåTşG¤!9‰S;¾:~qåõ0u+Ò’•Ÿ[W—›hÃ´ÊÍo¬ÊÏ·ğµÊÎ®­ÉÍf™E¤0Ì²3k¦‡oÉ¼EáÅÓèñqTZbœ'5>h1…lr×/;üMMşDíÉ÷ñï‡sÓÖíıd›®àc„êµ=	…KÅŒÆ¢§Çøƒ3úy¼Z…•N4FcÂ‰IFN-ıqcÙ^÷£IÛ#+—k©×izÖnsiºfê|bÙÑ§‡ñQ)Æë Np1šbARi9X’«3Dt°÷pÇ:ëÚun4g{,™àä@!ôo°ïó§0n}‘üe›"•ŠéÖÅWı|òøñ—¥Æ6
+±/ÑÆ³wy)8xåÒrğÒJğ¥…Ù€àë7®_›¨\èîRTêììVìêÌ÷¾¬ ıK5n Ë‰”–×Í;LË£—ÚcbÕcØe•Eg§îèÜFQü½°Zá°a@·O^|´_.¨Á~ÓäùŸ
+I‹«
+Æß¹Ió _óc•_}ÜeƒU›ÕÇè¦^oÿ÷—ç‹«áá°i®*'PF¾vÎ‘H±1 ›Ob8Ìb¶1;˜ÁÌöÁµË‹Ó5Îş8\@£S`0Ö90<ê(Z-*Y-ùc¢RÕÿMÏKûŸ=Š`[û›é|×£‡ûe6ÕåŸ/;VœæÜ˜ŸÍ
+úİ/ª¬Äƒe¢â<3N>[]à:]UkégAMlg2hæ6:Ræ¦íRNÅÓ#Qyy 9ÿPihÉ‘ã+k¾{ÅnÜÈğ;ÀÊM—À°Ş4îÑ÷N÷öwŒ2şõ†uÆ 8	Ü?B; œÖà´Nó›Ş.ıü}øç=¤Şj1ïêŸùG’SñÈşŞ@qwGF<¥ev˜¸×ÄíiH”Õõ“bÏË5Z¿ LÌ!şÌ‰–Óó}ã³]Ígæ÷pœ9îîÇ1Üİİ9;5“çí—’E[ô)¿·`9˜î_KæQ¬ıœl|‰6!úÃö}s‰y¼;3À=VÍrµ :ØéúXúè“i€ËÜh²ÓûÊ?ò×+ñW"ÃœŠ	Í¤æÈg¯2NBLâøiñ.sv®|}ûVWäÖß-ï¢90tËÀ¨©ÅÈ mĞÜˆF™449¼hll’š¡‡vÄ”.Ì‰Åçx±Ö•‘}"Ê¯pv7–ya_ÊÏÏ#î™©o¾Lš¥~ŞöĞ‰N¤.Èåïğmü¯ôfü¯èÖÔENmetflnÔ¡l@E>tÖuò Úük™(á±ºµÑafÔá÷ÿ½bW+}Âwcœû³ô?Ñíˆú9„°ıtgW®+šlåàibŸKã¤D‡FcRV´^B¾h†$²ì9‡–:ï¼cî\ÏøÇşÄ4ÌÛÕK©è&‡¯œã¬½J.Ä:;xòOz­ávÂR{ş”ß&Uç”î´B¢`Vó±ô*¨ˆHÏˆĞøğPrcD ›ÔŞìõ´ èpNV;'y<?Ìnˆj«ªy/¯nıïëYjcMPòÉU×°\Göş7•ì6©&^FAlFü¡ºŠôÊÄ,nğc¯¾XÍŞ&I8œ;…èF¤c±$
+ÔƒHÆá	4Â2Bs±åCscpœ–h<»©ëŸÕâs+zS¬£²M‡±¤	öz2c»¯ôÒ§,®²¬2cúŠÌU­Ã›› ~c¥š/İ:$^À À”ÂÓá„÷) İ”=. ®¥ˆ±“g7Ö«ĞÑ¡H\Ã~“KÑåŞ¡İÏ_†~tc3ôrbYŠÜÓĞZÑºÛù½¼XhLVÑ’¸Du#W·}ø²G|»aÏm¨(‰=£Ï6Ş¤éœÓ%vºŠ™w·cû++q`N >5Xº<<Ê${QhGX—•ÎÃ%D¼j'¸*‹%^eQbbi^<ï`~R|uÑ±hc//cãÏhPnÄ©/4ŠÔTuí×§¢È:D5-µ¢Ìš®Ô®(@ŸxË|ûò;6ŞHÊì]Ù@´Eâ*VDc(DğïbæsV]tU¯üs¬êÅûZÇÉ?—UVE×ö"í
+ÏeÕò%ìóBnú- a­õåe]-ÍGznèù‡ ëFcÊ/Ãù ‚ÿf¹p<8¡1|xõeùfÿóçÑyİ€ÙÖ+™Ç*äJêG;¥M%Ùã^fŸ$î¼Ö¤ì8öÕnŞOeï·ÒE¦–h}ÄŸóùÜËô°w{«¦kğôşûúÅåMÛMµæ;on•Ûí»Ù"öíÓúcEş²AIÀº2ßÖs=¯ wÊÑÙ©Ìà”òí´ÔÕŠ¤;Ë9T+š„OûÓÜÎğ]pn~n¾™=ß¿Ou²c2²
+ ëYŸÖOÅõ‚LÎô¯ƒ¹ı'C_(z›an0˜FaZrÎ¸¸à\œİ'Ä1¦%	áŒÖ8—Ùİp´ á74¸ÇÀt¹´Ó‡ÏüõoøÜ\°·˜İ@wõè´T¤Ïp¹´s—›p—ÔÏ·qÌä	3aZwÎLWâ\vS‘­¢t÷ˆ(ííS*»ÏÌÂœ.Êúİ,ó«ŒöÆü[p w³hĞri»Œà~Pwôğ(
+fóS®Ç]*¬™fæ§F0gÜ¡™{ =(R|‹·Êr»LèŠÿ>ÿ»Ü·€í.©?ûæN&@»§òz~¹® ¤^?¤ÄCã¾·$"}BÆÍzÙi ²F:™^:Ö@º`•Ş7ë;İÄCú!,T†|élL1ç{Ia×ÔGÅ%âĞÙÇ1'dy)"H¸¶ôB{>a²|~+Ñ¢ŸÑ«Ñw7¨ö\<İ$„6×Td\b Tëùélê^(0-•1/”>·Õb?1.Ã·;ø¾8E†sõq?ğ½=Q*÷§¿‘Ÿ|	 Ò
+Ë%L¶†ì±ÿ1g°`Ï½í ğîFWîş'6{+ÇJ„A $`¼}Ö`îíÿ‰Mc%Ë)>Œ«fbi oÙ<ieII5dµüKN€}²º’Ì'FÁ!˜œò|öòäzÙ]oSI¤„’!ŒºAšˆƒÜÙ¾ á´Põêæn–›àÃ&"k	Prº*H¯›]6²@81w™ojÜÛ£+-åJ2C9²­@KÇàsDô›˜‘józ Û“{U*1ÜsóÀA”yıw|œÈq—o•Ô*˜³™q¶FQ %àuO„ä$õ9©çÄ·,ü°
+4â‹V"‰|§ö²ì¦ùğÖ¨Ú‡ÑNDú,ßÛWt©EtZ"õòPñ\R½”$ÂË·ÿJL¬¦½­§H2M=xé\şí–Ó1;‚éF³k£¤ºk¯’|ö¤î¾Zp”ØÔ®Ä˜l
+å&¿+‚„ üWˆN®?]7™z^nÔ*à» øxÜ:ªİãŠÂ¾ à¹ÙŞ&¨–$}åµ"e	(¥ªV‚ïğñ@>¶üŠôá¶Ö»êlOŞô\ ö7£Ò9
+seoN¥šB6´_Â ÂÛ}iù/8Idj•à0Ö¿–ÑŸ« ˆÓçæ9Ì½N÷E}½½ÿ! øÔarüÁ@H2Å…œQä1sCÏ&–<¡x‚  ” #ïŞ8EÛ}IğN.¸¢¥N™)j`˜T¬.Ê– Q†dŠ¶Q8Æ†sG#(	Ó|ˆá›“%îÀŠpùx&<g$y†°¾—µy8BM‰¶Ğg§TûicT°H£Ä7K’E¾\eÚM#h‹¤l[¦«h:1QÄa‰ˆ 	EÂ›Q¶I’’„“á¹¢bpuDdby¡=R¤İ?R!ølÕ)=ÂDˆ#NÂ’¤H“$KÎ^ò(R¢L…*5(ê4hÒ¢M‡.=ú2fÂ†s,YÙÇš[vì9päÄWnÜ‘x £ òDCç…Á›_~ü„)KˆPa†u)Vâ¼#Ş;¨J¹ct'A‡T‘zŸ|V©É!=õÑqƒ¾úâ›NÿY±dD8¶—EXvÉšH·İpÓIQvÔºç»¢mØR&W¬8<ñÚ%H’(YŠ4©öK·î€L²äÈvZ‡<¹òØ´í¬ûFyà‰‡ÆMà;eŞ¤ÿ-(5dÚçÌ‡OCÓœ47-ÄÈuW\u-âÏçñ„ÒÎà¢ÑXá„"’ŸNÒ ÿo­tÃ¡1Á0{ G}DL™2s¸È  Zfont/woff2Obplist00ÔvwX$versionX$objectsY$archiverT$top † ¯%#)*0123STUVWXYZ[\]^_`abcdefghijklpqU$nullİ	
+ !"___nsurlrequest_proto_prop_obj_6___nsurlrequest_proto_prop_obj_3R$2___nsurlrequest_proto_prop_obj_0R$3___nsurlrequest_proto_prop_obj_4V$class___nsurlrequest_proto_prop_obj_1R$4R$0___nsurlrequest_proto_prop_obj_5___nsurlrequest_proto_prop_obj_2R$1€#€€	€€$€€ €Ó$% '(WNS.base[NS.relative€ €€_Qhttps://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOUuhpKKSTjw.woff2Ò+,-.Z$classnameX$classesUNSURL¢-/XNSObject#AÀä,³Sk ÈÓ456DRWNS.keysZNS.objects­789:;<=>?@ABC€	€
+€€€€€€€€€€€­EFGHIFKLMNOPQ€€€€€€€€€€€€ €!€"\Content-Type_Access-Control-Allow-OriginSAge_X-XSS-ProtectionWExpires_Timing-Allow-Origin]Cache-ControlTDate^Content-LengthX__hhaa___X-Content-Type-Options]Accept-Ranges]Last-ModifiedZfont/woff2Q*V698767]1; mode=block_Mon, 09 Dec 2019 20:04:17 GMT_public, max-age=31536000_Sun, 09 Dec 2018 20:04:17 GMTT8800_¼
+
+YnBsaXN0MDDcAQIDBAUGBwgJCgsMDQ8RExUXGBocHiAiXENvbnRlbnQtVHlwZV8QG0FjY2Vzcy1Db250cm9sLUFsbG93LU9yaWdpblNBZ2VfEBBYLVhTUy1Qcm90ZWN0aW9uV0V4cGlyZXNfEBNUaW1pbmctQWxsb3ctT3JpZ2luXUNhY2hlLUNvbnRyb2xURGF0ZV5Db250ZW50LUxlbmd0aF8QFlgtQ29udGVudC1UeXBlLU9wdGlvbnNdQWNjZXB0LVJhbmdlc11MYXN0LU1vZGlmaWVkoQ5aZm9udC93b2ZmMqEQUSqhElY2OTg3NjehFF0xOyBtb2RlPWJsb2NroRZfEB1Nb24sIDA5IERlYyAyMDE5IDIwOjA0OjE3IEdNVKEQoRlfEBhwdWJsaWMsIG1heC1hZ2U9MzE1MzYwMDChG18QHVN1biwgMDkgRGVjIDIwMTggMjA6MDQ6MTcgR01UoR1UODgwMKEfV25vc25pZmahIVVieXRlc6EjXxAdV2VkLCAxMSBPY3QgMjAxNyAyMTo0OTozOSBHTVQACAAhAC4ATABQAGMAawCBAI8AlACjALwAygDYANoA5QDnAOkA6wDyAPQBAgEEASQBJgEoAUMBRQFlAWcBbAFuAXYBeAF+AYAAAAAAAAACAQAAAAAAAAAkAAAAAAAAAAAAAAAAAAABoA==WnosniffUbytes_Wed, 11 Oct 2017 21:49:39 GMTÒ+,mn_NSMutableDictionary£mo/\NSDictionaryZfont/woff2Ò+,rs_NSHTTPURLResponse£tu/_NSHTTPURLResponse]NSURLResponse_NSKeyedArchiverÑxy_WebResourceResponse€    # - 2 7 _ e € ¢ Ä Ç é ì7:=_„†ˆŠŒ’”•—™›¤¬¸º¼¾"+14=FHJQYdrtvxz|~€‚„†ˆŠŒšœ ¢¤¦¨ª¬®°²´¶Ãáåø $)8AZhvƒŠ˜¸Óóø¸ÀÆæë"6:N\nq‡             z              ‰Õ!"#OLbplist00Ôš›X$versionX$objectsY$archiverT$top † ¯7#)*0123efghijklmnopqrstuvwxyz{|}~€‚ƒ„…†‡ˆ‰Š‹Œ”•U$nullİ	
+ !"___nsurlrequest_proto_prop_obj_6___nsurlrequest_proto_prop_obj_3R$2___nsurlrequest_proto_prop_obj_0R$3___nsurlrequest_proto_prop_obj_4V$class___nsurlrequest_proto_prop_obj_1R$4R$0___nsurlrequest_proto_prop_obj_5___nsurlrequest_proto_prop_obj_2R$1€5€€	€€6€€ €Ó$% '(WNS.base[NS.relative€ €€_fhttps://deepgenerativemodels.github.io/assets/css/style.css?v=78933f1be04213234aa41686fe08910a1f5fdc40Ò+,-.Z$classnameX$classesUNSURL¢-/XNSObject#AÀä,³SÖ ÈÓ456MdWNS.keysZNS.objects¯789:;<=>?@ABCDEFGHIJKL€	€
+€€€€€€€€€€€€€€€€€€€€¯NOPQRSTUVWXYZ[\]\_`abc€€ €!€"€#€$€%€&€'€(€)€*€+€,€-€.€-€/€0€1€2€3€4_Content-EncodingVServer]Cache-Control_Strict-Transport-SecurityWx-timer_x-fastly-request-id]Accept-Ranges_Access-Control-Allow-Origin_x-github-request-id[x-served-by^Content-LengthSViaTVaryTDate\x-cache-hitsWExpiresSAgeX__hhaa__Wx-cache\Content-TypeTEtag]Last-ModifiedTgzipZGitHub.com[max-age=600_max-age=31556952_S1545084624.794530,VS0,VE18_(8dda263627b5eb270274a97b52de0ead1597f3baUbytesQ*_"8DF4:4D28:1F92978:2B89473:5C181ECF_cache-bos8235-BOST2358[1.1 varnish_Accept-Encoding_Mon, 17 Dec 2018 22:10:23 GMTQ0_Mon, 17 Dec 2018 22:20:23 GMT_¬
+
+YnBsaXN0MDDfEBUBAgMEBQYHCAkKCwwNDg8QERITFBUWGBocHiAiJCYoKiwuMDI0Njc5Oz1fEBBDb250ZW50LUVuY29kaW5nVlNlcnZlcl1DYWNoZS1Db250cm9sXxAZU3RyaWN0LVRyYW5zcG9ydC1TZWN1cml0eV1BY2NlcHQtUmFuZ2VzXxATeC1mYXN0bHktcmVxdWVzdC1pZFd4LXRpbWVyXxAbQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luXxATeC1naXRodWItcmVxdWVzdC1pZFt4LXNlcnZlZC1ieV5Db250ZW50LUxlbmd0aFNWaWFUVmFyeVREYXRlXHgtY2FjaGUtaGl0c1dFeHBpcmVzU0FnZVd4LWNhY2hlXENvbnRlbnQtVHlwZVRFdGFnXUxhc3QtTW9kaWZpZWShF1RnemlwoRlaR2l0SHViLmNvbaEbW21heC1hZ2U9NjAwoR1fEBBtYXgtYWdlPTMxNTU2OTUyoR9VYnl0ZXOhIV8QKDhkZGEyNjM2MjdiNWViMjcwMjc0YTk3YjUyZGUwZWFkMTU5N2YzYmGhI18QG1MxNTQ1MDg0NjI0Ljc5NDUzMCxWUzAsVkUxOKElUSqhJ18QIjhERjQ6NEQyODoxRjkyOTc4OjJCODk0NzM6NUMxODFFQ0ahKV8QEWNhY2hlLWJvczgyMzUtQk9ToStUMjM1OKEtWzEuMSB2YXJuaXNooS9fEA9BY2NlcHQtRW5jb2RpbmehMV8QHU1vbiwgMTcgRGVjIDIwMTggMjI6MTA6MjMgR01UoTNRMKE1XxAdTW9uLCAxNyBEZWMgMjAxOCAyMjoyMDoyMyBHTVShM6E4VE1JU1OhOl8QF3RleHQvY3NzOyBjaGFyc2V0PXV0Zi04oTxfEBFXLyI1YzAzNGFiNy0yMzNkIqE+XxAdU3VuLCAwMiBEZWMgMjAxOCAwMzowMDowNyBHTVQACAA1AEgATwBdAHkAhwCdAKUAwwDZAOUA9AD4AP0BAgEPARcBGwEjATABNQFDAUUBSgFMAVcBWQFlAWcBegF8AYIBhAGvAbEBzwHRAdMB1QH6AfwCEAISAhcCGQIlAicCOQI7AlsCXQJfAmECgQKDAoUCigKMAqYCqAK8Ar4AAAAAAAACAQAAAAAAAAA/AAAAAAAAAAAAAAAAAAAC3g==TMISS_text/css; charset=utf-8_W/"5c034ab7-233d"_Sun, 02 Dec 2018 03:00:07 GMTÒ+,‘’_NSMutableDictionary£‘“/\NSDictionaryXtext/cssÒ+,–—_NSHTTPURLResponse£˜™/_NSHTTPURLResponse]NSURLResponse_NSKeyedArchiverÑœ_WebResourceResponse€    # - 2 7 q w ’ ´ Ö Ù û ş 'ILOq“–˜šœ ¢¤¦§©«­¯¶¾ÊÌÎĞ9>IRX[dmoqx€‹¤¦¨ª¬®°²´¶¸º¼¾ÀÂÄÆÈÊÌÎĞéëíïñóõ÷ùûıÿ	*1?[cy‡¥»ÇÖÚßäñùı .3>J]{¦¬®Óçìø
+*,L	ü
+
+
+/
+O
+T
+j
+n
+{
+„
+‰
+
+¡
+µ
+Ã
+Õ
+Ø
+î                           
+ğ_fhttps://deepgenerativemodels.github.io/assets/css/style.css?v=78933f1be04213234aa41686fe08910a1f5fdc40O#=/*! normalize.css v3.0.2 | MIT License | git.io/normalize */html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{font-size:2em;margin:0.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace, monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:0.35em 0.625em 0.75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}.highlight table td{padding:5px}.highlight table pre{margin:0}.highlight .cm{color:#999988;font-style:italic}.highlight .cp{color:#999999;font-weight:bold}.highlight .c1{color:#999988;font-style:italic}.highlight .cs{color:#999999;font-weight:bold;font-style:italic}.highlight .c,.highlight .cd{color:#999988;font-style:italic}.highlight .err{color:#a61717;background-color:#e3d2d2}.highlight .gd{color:#000000;background-color:#ffdddd}.highlight .ge{color:#000000;font-style:italic}.highlight .gr{color:#aa0000}.highlight .gh{color:#999999}.highlight .gi{color:#000000;background-color:#ddffdd}.highlight .go{color:#888888}.highlight .gp{color:#555555}.highlight .gs{font-weight:bold}.highlight .gu{color:#aaaaaa}.highlight .gt{color:#aa0000}.highlight .kc{color:#000000;font-weight:bold}.highlight .kd{color:#000000;font-weight:bold}.highlight .kn{color:#000000;font-weight:bold}.highlight .kp{color:#000000;font-weight:bold}.highlight .kr{color:#000000;font-weight:bold}.highlight .kt{color:#445588;font-weight:bold}.highlight .k,.highlight .kv{color:#000000;font-weight:bold}.highlight .mf{color:#009999}.highlight .mh{color:#009999}.highlight .il{color:#009999}.highlight .mi{color:#009999}.highlight .mo{color:#009999}.highlight .m,.highlight .mb,.highlight .mx{color:#009999}.highlight .sb{color:#d14}.highlight .sc{color:#d14}.highlight .sd{color:#d14}.highlight .s2{color:#d14}.highlight .se{color:#d14}.highlight .sh{color:#d14}.highlight .si{color:#d14}.highlight .sx{color:#d14}.highlight .sr{color:#009926}.highlight .s1{color:#d14}.highlight .ss{color:#990073}.highlight .s{color:#d14}.highlight .na{color:#008080}.highlight .bp{color:#999999}.highlight .nb{color:#0086B3}.highlight .nc{color:#445588;font-weight:bold}.highlight .no{color:#008080}.highlight .nd{color:#3c5d5d;font-weight:bold}.highlight .ni{color:#800080}.highlight .ne{color:#990000;font-weight:bold}.highlight .nf{color:#990000;font-weight:bold}.highlight .nl{color:#990000;font-weight:bold}.highlight .nn{color:#555555}.highlight .nt{color:#000080}.highlight .vc{color:#008080}.highlight .vg{color:#008080}.highlight .vi{color:#008080}.highlight .nv{color:#008080}.highlight .ow{color:#000000;font-weight:bold}.highlight .o{color:#000000;font-weight:bold}.highlight .w{color:#bbbbbb}.highlight{background-color:#f8f8f8}*{box-sizing:border-box}body{padding:0;margin:0;font-family:"Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;font-size:16px;line-height:1.5;color:#606c71}a{color:#1e6bb8;text-decoration:none}a:hover{text-decoration:underline}.btn{display:inline-block;margin-bottom:1rem;color:rgba(255,255,255,0.7);background-color:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.2);border-style:solid;border-width:1px;border-radius:0.3rem;transition:color 0.2s, background-color 0.2s, border-color 0.2s}.btn:hover{color:rgba(255,255,255,0.8);text-decoration:none;background-color:rgba(255,255,255,0.2);border-color:rgba(255,255,255,0.3)}.btn+.btn{margin-left:1rem}@media screen and (min-width: 64em){.btn{padding:0.75rem 1rem}}@media screen and (min-width: 42em) and (max-width: 64em){.btn{padding:0.6rem 0.9rem;font-size:0.9rem}}@media screen and (max-width: 42em){.btn{display:block;width:100%;padding:0.75rem;font-size:0.9rem}.btn+.btn{margin-top:1rem;margin-left:0}}.page-header{color:#fff;text-align:center;background-color:#159957;background-image:linear-gradient(120deg, #155799, #159957)}@media screen and (min-width: 64em){.page-header{padding:5rem 6rem}}@media screen and (min-width: 42em) and (max-width: 64em){.page-header{padding:3rem 4rem}}@media screen and (max-width: 42em){.page-header{padding:2rem 1rem}}.project-name{margin-top:0;margin-bottom:0.1rem}@media screen and (min-width: 64em){.project-name{font-size:3.25rem}}@media screen and (min-width: 42em) and (max-width: 64em){.project-name{font-size:2.25rem}}@media screen and (max-width: 42em){.project-name{font-size:1.75rem}}.project-tagline{margin-bottom:2rem;font-weight:normal;opacity:0.7}@media screen and (min-width: 64em){.project-tagline{font-size:1.25rem}}@media screen and (min-width: 42em) and (max-width: 64em){.project-tagline{font-size:1.15rem}}@media screen and (max-width: 42em){.project-tagline{font-size:1rem}}.main-content{word-wrap:break-word}.main-content :first-child{margin-top:0}@media screen and (min-width: 64em){.main-content{max-width:64rem;padding:2rem 6rem;margin:0 auto;font-size:1.1rem}}@media screen and (min-width: 42em) and (max-width: 64em){.main-content{padding:2rem 4rem;font-size:1.1rem}}@media screen and (max-width: 42em){.main-content{padding:2rem 1rem;font-size:1rem}}.main-content img{max-width:100%}.main-content h1,.main-content h2,.main-content h3,.main-content h4,.main-content h5,.main-content h6{margin-top:2rem;margin-bottom:1rem;font-weight:normal;color:#159957}.main-content p{margin-bottom:1em}.main-content code{padding:2px 4px;font-family:Consolas, "Liberation Mono", Menlo, Courier, monospace;font-size:0.9rem;color:#567482;background-color:#f3f6fa;border-radius:0.3rem}.main-content pre{padding:0.8rem;margin-top:0;margin-bottom:1rem;font:1rem Consolas, "Liberation Mono", Menlo, Courier, monospace;color:#567482;word-wrap:normal;background-color:#f3f6fa;border:solid 1px #dce6f0;border-radius:0.3rem}.main-content pre>code{padding:0;margin:0;font-size:0.9rem;color:#567482;word-break:normal;white-space:pre;background:transparent;border:0}.main-content .highlight{margin-bottom:1rem}.main-content .highlight pre{margin-bottom:0;word-break:normal}.main-content .highlight pre,.main-content pre{padding:0.8rem;overflow:auto;font-size:0.9rem;line-height:1.45;border-radius:0.3rem;-webkit-overflow-scrolling:touch}.main-content pre code,.main-content pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}.main-content pre code:before,.main-content pre code:after,.main-content pre tt:before,.main-content pre tt:after{content:normal}.main-content ul,.main-content ol{margin-top:0}.main-content blockquote{padding:0 1rem;margin-left:0;color:#819198;border-left:0.3rem solid #dce6f0}.main-content blockquote>:first-child{margin-top:0}.main-content blockquote>:last-child{margin-bottom:0}.main-content table{display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all;-webkit-overflow-scrolling:touch}.main-content table th{font-weight:bold}.main-content table th,.main-content table td{padding:0.5rem 1rem;border:1px solid #e9ebec}.main-content dl{padding:0}.main-content dl dt{padding:0;margin-top:1rem;font-size:1rem;font-weight:bold}.main-content dl dd{padding:0;margin-bottom:1rem}.main-content hr{height:2px;padding:0;margin:1rem 0;background-color:#eff0f1;border:0}.site-footer{padding-top:2rem;margin-top:2rem;border-top:solid 1px #eff0f1}@media screen and (min-width: 64em){.site-footer{font-size:1rem}}@media screen and (min-width: 42em) and (max-width: 64em){.site-footer{font-size:1rem}}@media screen and (max-width: 42em){.site-footer{font-size:0.9rem}}.site-footer-owner{display:block;font-weight:bold}.site-footer-credits{color:#819198}
+    1 < K b t Š ¨ Ò Ó[m[w[}[‚[[£c8ctvNvWv]vfv¶™v™¢¢(¢|ÄàÄëÍŒÍ—ÙçÚP             $              ı‘
