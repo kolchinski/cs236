@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>CS 236: Deep Generative Models | Fall 2018-2019</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="CS 236: Deep Generative Models" />
+<meta name="author" content="Aditya Grover" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Fall 2018-2019" />
+<meta property="og:description" content="Fall 2018-2019" />
+<link rel="canonical" href="https://deepgenerativemodels.github.io/" />
+<meta property="og:url" content="https://deepgenerativemodels.github.io/" />
+<meta property="og:site_name" content="CS 236: Deep Generative Models" />
+<script type="application/ld+json">
+{"@type":"WebSite","url":"https://deepgenerativemodels.github.io/","name":"CS 236: Deep Generative Models","headline":"CS 236: Deep Generative Models","author":{"@type":"Person","name":"Aditya Grover"},"description":"Fall 2018-2019","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/assets/css/style.css?v=78933f1be04213234aa41686fe08910a1f5fdc40">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">CS 236&#58; Deep Generative Models</h1>
+      <h2 class="project-tagline">Fall 2018-2019</h2>
+      
+      
+    </section>
+
+    <section class="main-content">
+      <h2 id="timelocation">Time/Location</h2>
+<ul>
+  <li>Lectures: Mon/Wed 4:30-5:50 pm, Location: Room 320-105.</li>
+  <li>Office Hours and Sections: See <a href="https://calendar.google.com/calendar/embed?src=3cr1ibe8ihrs1ev0t8gi19r9v0%40group.calendar.google.com&amp;ctz=America%2FLos_Angeles">course calendar</a>.</li>
+  <li>Mid-term: November 9 (Friday), 6-9 pm, Location: Hewlett 200.</li>
+</ul>
+
+<h2 id="instructors">Instructors</h2>
+<p><a href="https://cs.stanford.edu/~ermon/">Stefano Ermon</a><br />
+<a href="http://aditya-grover.github.io/">Aditya Grover</a></p>
+
+<h2 id="course-assistants">Course Assistants</h2>
+<p><a href="https://yang-song.github.io/">Yang Song</a> <br />
+<a href="http://tsong.me/">Jiaming Song</a><br />
+<a href="http://ruishu.io/">Rui Shu</a><br />
+<a href="http://caseychu.io/">Casey Chu</a><br />
+<a href="https://www.linkedin.com/in/nishith-khandwala-16b27227">Nishith Khandwala</a><br />
+<a href="http://kristychoi.com/">Kristy Choi</a></p>
+
+<h2 id="course-description">Course Description</h2>
+
+<p>Generative models are widely used in many subfields of AI and Machine Learning. Recent advances in parameterizing these models using deep neural networks, combined with progress in stochastic optimization methods, have enabled scalable modeling of complex, high-dimensional data including images, text, and speech. In this course, we will study the probabilistic foundations and learning algorithms for deep generative models, including Variational Autoencoders (VAE), Generative Adversarial Networks (GAN), autoregressive models, and normalizing flow models. The course will also discuss application areas that have benefitted from deep generative models, including computer vision, speech and natural language processing, graph mining, and reinforcement learning.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>Basic knowledge about machine learning from at least one of CS 221, 228, 229 or 230. Students will work with computational and mathematical models and should have a basic knowledge of probabilities and calculus. Proficiency in some programming language, preferably Python, required.</p>
+
+<h2 id="useful-links">Useful links</h2>
+
+<p><a href="https://www.piazza.com/stanford/fall2018/cs236">Piazza</a><br />
+<a href="https://deepgenerativemodels.github.io/notes/index.html">Course notes</a></p>
+
+<h2 id="suggested-reading">Suggested Reading</h2>
+
+<p>There is no required textbook. <em>Deep Learning</em> by Ian Goodfellow, Yoshua Bengio, Aaron Courville. Online version available free <a href="https://www.deeplearningbook.org/">here</a>.</p>
+
+<h2 id="grading-policy">Grading Policy</h2>
+<ul>
+  <li>Three homeworks (15% each): mix of conceptual and programming based questions</li>
+  <li>Midterm: 15%</li>
+  <li>Course Project: 40%
+    <ul>
+      <li>Proposal: 5%</li>
+      <li>Progress Report: 10%</li>
+      <li>Poster Presentation: 10%</li>
+      <li>Final Report: 15%</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="project-guidelines">Project Guidelines</h2>
+<p>The course project will give the students a chance to explore deep generative modeling in greater detail. Course projects will be done in groups of up to 3 students and can fall into one or more of the following categories:</p>
+<ul>
+  <li>Application of deep generative models on a novel task/dataset</li>
+  <li>Algorithmic improvements into the evaluation, learning and/or inference of deep generative models</li>
+  <li>Theoretical analysis of any aspect of existing deep generative models</li>
+</ul>
+
+<h2 id="collaboration-policy-and-honor-code">Collaboration Policy and Honor Code</h2>
+<p>You are free to form study groups and discuss homeworks and projects. However, you must write up homeworks and code from scratch independently without referring to any notes from the joint session. You should not copy, refer to, or look at the solutions in preparing their answers from previous years’ homeworks. It is an honor code violation to intentionally refer to a previous year’s solutions, either official or written up by another student. Anybody violating the honor code will be referred to the Office of Judicial Affairs.</p>
+
+<h2 id="submission-instructions">Submission Instructions</h2>
+<p>We will be using the <a href="http://www.gradescope.com/">GradeScope</a> online submission system. All students (non-SCPD and SCPD) should submit their assignments electronically via <a href="http://www.gradescope.com/">GradeScope</a>. Students can typeset or scan their homeworks.</p>
+
+<p>To register for GradeScope,</p>
+<ul>
+  <li>Create an account on <a href="http://www.gradescope.com/">GradeScope</a> if you don’t have one already.</li>
+  <li>Here are some <a href="https://cs.stanford.edu/~ermon/cs228/submitting_hw_guide.pdf">tips</a> for submitting through Gradescope.</li>
+</ul>
+
+<p><strong>Written Assignments</strong>: Homeworks should be written up clearly and succinctly; you may lose points if your answers are unclear or unnecessarily complicated. You are encouraged to use LaTeX to writeup your homeworks (here is a <a href="/assets/files/hwtemplate.tex">template</a>), but this is not a requirement.</p>
+
+<p><strong>Late Homework</strong>: You have 6 late days which you can use at any time during the term without penalty. For a particular homework, you can use only two late days. Once you run out of late days, you will incur in a 25% penalty for each extra late day you use. Each late homework should be clearly marked as “Late” on the first page. <strong>No late days is allowed for deadlines related to the course project.</strong></p>
+
+<p><strong>Regrade Policy</strong>: You may submit a regrade request if you believe that the course staff made an error in grading. Any regrade requests should be submitted through Gradescope within one week of receiving your grade. Please try to be as specific as possible with your regrade request.</p>
+
+<h2 id="syllabus-tentative-periodically-updated-throughout-the-quarter">Syllabus (tentative, periodically updated throughout the quarter)</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Week</th>
+      <th>Starting date</th>
+      <th>Lecture topics</th>
+      <th>Coursework</th>
+      <th>Sections</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Sep 24</td>
+      <td>Introduction and Background (<a href="/assets/slides/cs236_lecture1.pdf">slides 1</a>, <a href="/assets/slides/cs236_lecture2.pdf">slides 2</a>)</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Oct 1</td>
+      <td>Autoregressive Models (<a href="/assets/slides/cs236_lecture3.pdf">slides 3</a>, <a href="/assets/slides/cs236_lecture4.pdf">slides 4</a>)</td>
+      <td>HW 1 released</td>
+      <td>Probability and linear algebra, PyTorch</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Oct 8</td>
+      <td>Variational Autoencoders (<a href="/assets/slides/cs236_lecture5.pdf">slides 5</a>, <a href="/assets/slides/cs236_lecture6.pdf">slides 6</a>)</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Oct 15</td>
+      <td>Normalizing Flow Models (<a href="/assets/slides/cs236_lecture7.pdf">slides 7</a>, <a href="/assets/slides/cs236_lecture8.pdf">slides 8</a>)</td>
+      <td>HW 1 due, HW 2 released</td>
+      <td>CNNs and RNNs (<a href="/assets/slides/session3.pdf">slides</a>)</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Oct 22</td>
+      <td>Generative Adversarial Networks (<a href="/assets/slides/cs236_lecture9.pdf">slides 9</a>, <a href="/assets/slides/cs236_lecture10.pdf">slides 10</a>)</td>
+      <td>Project Proposal due</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Oct 29</td>
+      <td>Guest lecture 1: Tengyu Ma on Monday,<br />  Evaluation of Generative Models on Wednesday (<a href="/assets/slides/cs236_lecture11.pdf">slides 11</a>)</td>
+      <td>HW 2 due</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>Nov 5</td>
+      <td>Combining generative model variants (<a href="/assets/slides/cs236_lecture12.pdf">slides 12</a>), Energy-based models (<a href="/assets/slides/cs236_lecture13.pdf">slides 13</a>)</td>
+      <td>Mid term</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>Nov 12</td>
+      <td>Guest lecture 2: Diederik P. Kingma on Monday,<br />  Discreteness in Latent Variable Modeling on Wednesday (<a href="/assets/slides/cs236_lecture14.pdf">slides 14</a>)</td>
+      <td>Project Progress Report due, HW 3 released</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>Nov 19</td>
+      <td>- Thanksgiving break -</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Nov 26</td>
+      <td>Applications: Vision, Speech, Language, Graphs, Reinforcement learning</td>
+      <td>Poster presentation on Friday</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>Dec 3</td>
+      <td>Generative Adversarial Imitation Learning. No class on Wednesday.</td>
+      <td>HW 3 due</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>Dec 10</td>
+      <td>- Finals week -</td>
+      <td>Final project reports due on <br /> Dec 12th (no late days)</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="additional-reading-surveys-and-tutorials">Additional Reading: Surveys and tutorials</h1>
+
+<ol>
+  <li><a href="https://ermongroup.github.io/generative-models/">Tutorial on Deep Generative Models.</a> Aditya Grover and Stefano Ermon. International Joint Conference on Artificial Intelligence, July 2018.</li>
+  <li><a href="https://sites.google.com/view/cvpr2018tutorialongans/">Tutorial on Generative Adversarial Networks.</a> Computer Vision and Pattern Recognition, June 2018.</li>
+  <li><a href="https://www.youtube.com/watch?v=JrO5fSskISY">Tutorial on Deep Generative Models.</a> Shakir Mohamed and Danilo Rezende. Uncertainty in Artificial Intelligence, July 2017.</li>
+  <li><a href="https://www.youtube.com/watch?v=AJVyzd0rqdc">Tutorial on Generative Adversarial Networks.</a> Ian Goodfellow. Neural Information Processing Systems, December 2016.</li>
+  <li><a href="https://www.cs.cmu.edu/~rsalakhu/papers/annrev.pdf">Learning deep generative models.</a> Ruslan Salakhutdinov. Annual Review of Statistics and Its Application, April 2015.</li>
+</ol>
+
+<h1 id="poster-session">Poster Session</h1>
+
+<h2 id="time--location">Time &amp; Location</h2>
+
+<p>Friday, Nov. 30, 2018.<br />
+AT&amp;T Patio, Gates Computer Science Building.</p>
+
+<p><strong>Session 1:</strong> 9:30 - 11:30 am<br />
+<strong>Session 2:</strong> 12:30 - 2:30 pm<br />
+<strong>Session 3:</strong> 2:30 - 4:30 pm</p>
+
+<h2 id="project-teams-and-titles">Project Teams and Titles</h2>
+
+<p><strong>Session 1:</strong> 9:30 - 11:30 am</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Team</th>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Suraj Nair</td>
+      <td>Learning Visual Representations for Robot Manipulation Using Stuctured Generation</td>
+    </tr>
+    <tr>
+      <td>Masha Itkina</td>
+      <td>A Generative Approach to Urban Environment Prediction</td>
+    </tr>
+    <tr>
+      <td>Margaret Guo, Zhenqin Wu</td>
+      <td>Molecule Generation with Iterative Refining Graph Variational Autoencoder</td>
+    </tr>
+    <tr>
+      <td>Marcella Cindy Prasetio</td>
+      <td>Unsupervised Face-to-Manga Translation with CycleGAN</td>
+    </tr>
+    <tr>
+      <td>Abubakar Abid</td>
+      <td>Deep Generative Models with Contrast</td>
+    </tr>
+    <tr>
+      <td>Aaron Effron, Abhijeet Shenoi, Alexia Wu</td>
+      <td>Progressive Flow Models</td>
+    </tr>
+    <tr>
+      <td>Rewa Sood, Jing Lim, Ashwini Ramamoorthy</td>
+      <td>Super Resolution of MR images using GANs</td>
+    </tr>
+    <tr>
+      <td>Samir Sen, Trevor Tsue</td>
+      <td>Deep Generative Voice Style Transfer</td>
+    </tr>
+    <tr>
+      <td>Kunal Menda, Patrick Slade</td>
+      <td>Learned Observation Models For Real-Time State Estimation</td>
+    </tr>
+    <tr>
+      <td>Ryan Holmdahl</td>
+      <td>Generating Novel Molecules with Iterative Refining Graph Autoencoders</td>
+    </tr>
+    <tr>
+      <td>Christopher Yeh, Sherrie Wang, Rose Rustowicz</td>
+      <td>Learning disentangled features for satellite imagery</td>
+    </tr>
+    <tr>
+      <td>Xuerong Xiao</td>
+      <td>GAN-based segmentation of dendritic spines</td>
+    </tr>
+    <tr>
+      <td>Ruohan Zhan, Ruilin Li</td>
+      <td>Knockoff GAN</td>
+    </tr>
+    <tr>
+      <td>Kun Ho Kim</td>
+      <td>Dynamics Model Learning via Generative Adversarial Imitation Learning</td>
+    </tr>
+    <tr>
+      <td>Andrew Deveau, Youkow Homma</td>
+      <td>Question-Answer Joke Generation</td>
+    </tr>
+    <tr>
+      <td>Oskar Triebe, Tymor Hamamsy, Will Lauer</td>
+      <td>Modeling Electrical Loads With Generative Models</td>
+    </tr>
+    <tr>
+      <td>Meng Tang, Yimin Liu</td>
+      <td>Deep Learning based proxy model for fluid flowthrough porous media</td>
+    </tr>
+    <tr>
+      <td>Panagiotis Lolas</td>
+      <td>Time-series anomaly detection</td>
+    </tr>
+    <tr>
+      <td>Manon Romain</td>
+      <td>Adversarial Object Enhancement</td>
+    </tr>
+    <tr>
+      <td>Animesh Koratana</td>
+      <td>Learned Divergence Metrics for Knowledge Distillation</td>
+    </tr>
+    <tr>
+      <td>Yanbing Zhu</td>
+      <td>GANs for Stable Materials Generation</td>
+    </tr>
+    <tr>
+      <td>Carlos Gomez</td>
+      <td>Learning Variational Autoencoders Through The Laplace Approximation</td>
+    </tr>
+    <tr>
+      <td>Xizhi Han, Zhaoheng Guo</td>
+      <td>Variational Monte Carlo Search for Quantum Many-body Ground States</td>
+    </tr>
+    <tr>
+      <td>Anchit Gupta, Jonathan Booher</td>
+      <td>sim2real Domain Adaptation for robotic manipulation using GAN</td>
+    </tr>
+    <tr>
+      <td>Liyue Shen</td>
+      <td>Representation Learning based on Deep Generative Model for Abnormally Detection</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Session 2:</strong> 12:30 - 2:30 pm</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Team.</th>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Laetitia Shao</td>
+      <td>Unrestricted Adversarial Training</td>
+    </tr>
+    <tr>
+      <td>Gael Colas, Rafael Rafailov</td>
+      <td>Video Colorization using GAN</td>
+    </tr>
+    <tr>
+      <td>Malik Boudiaf, Ianis Boigdal-Lambert</td>
+      <td>Imitating driving behavior in an urban environment</td>
+    </tr>
+    <tr>
+      <td>Jacob Hoffman</td>
+      <td>GAN-Based Data Augmentation for Brain Leision Segmentation</td>
+    </tr>
+    <tr>
+      <td>Arnaud Autef, Amaury Sabran, Benjamin Petit</td>
+      <td>Neural Processes for Image Completion</td>
+    </tr>
+    <tr>
+      <td>Pedro Garzon, Noa Glaser, Swetava Gangli</td>
+      <td>GeoGAN: GeoSpatial Feature Learning Using Generative Adversarial Networks</td>
+    </tr>
+    <tr>
+      <td>Alex Poms</td>
+      <td>Generative Models for General 3D Scenes</td>
+    </tr>
+    <tr>
+      <td>Shuvam Chakraborty, Vineet Kosaraju, Zaid Nabulsi</td>
+      <td>Poverty Prediction from Learned Satellite Representations through Multiclass cGANs</td>
+    </tr>
+    <tr>
+      <td>Ramon Iglesias</td>
+      <td>Latent Controllable Dynamics</td>
+    </tr>
+    <tr>
+      <td>Ramtin Keramati</td>
+      <td>Exploration with controllable agent in Reinfrocement learning</td>
+    </tr>
+    <tr>
+      <td>Christopher Lazarus, Ines Chami, Marc Thibault</td>
+      <td>Hallucigraph</td>
+    </tr>
+    <tr>
+      <td>Cody Kala, Owen Wang, Todd Macdonald</td>
+      <td>RinneGAN: Frame Interpolation on Animated Videos using Generative Adversarial Networks</td>
+    </tr>
+    <tr>
+      <td>Kyle Julian</td>
+      <td>Wildfire Image Generation Through Generative Adversarial Networks</td>
+    </tr>
+    <tr>
+      <td>Eric Zelikman</td>
+      <td>Adversarial Models of Reality (AMoRe)</td>
+    </tr>
+    <tr>
+      <td>Davis Rempe</td>
+      <td>Generating Physical Dynamics of 3D Rigid Objects</td>
+    </tr>
+    <tr>
+      <td>Akhila Yerukola, Amita Kamath</td>
+      <td>Text Generation using GANs</td>
+    </tr>
+    <tr>
+      <td>Alex Haigh, Sam Schwager, Frits van Paasschen</td>
+      <td>Deep Autoregressive Models for Conditional Graph Generation</td>
+    </tr>
+    <tr>
+      <td>Aldo Gael Carranza</td>
+      <td>Structured Variational Autoencoders</td>
+    </tr>
+    <tr>
+      <td>Megha Jhunjhunwala, Shreyash Pandey, Vivekkumar Patel</td>
+      <td>Fine grained text to image generation</td>
+    </tr>
+    <tr>
+      <td>Ana-Maria Istrate</td>
+      <td>Text to Image using Stacked GANs</td>
+    </tr>
+    <tr>
+      <td>Josh Singer, Sean O’Bannon, Tyler Smith</td>
+      <td>Frame Interpolation using Generative Adversarial Networks</td>
+    </tr>
+    <tr>
+      <td>Chaofei Fan</td>
+      <td>Optimal Decoder for VAE</td>
+    </tr>
+    <tr>
+      <td>Will Deaderick, Abhishek Roushan</td>
+      <td>AutoDoodler: Style Infusion for Automatic Doodle Artwork Generation</td>
+    </tr>
+    <tr>
+      <td>Marco Monteiro</td>
+      <td>lip2lip</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Session 3:</strong> 2:30 - 4:30 pm</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Team</th>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>David Tagliamonti, Akihiro Matsukawa, Benjamin Goeing</td>
+      <td>Image-to-Image Translation with Deep Invertible Generators</td>
+    </tr>
+    <tr>
+      <td>Nathan Dalal, Nikhil Sardana, Zhilin Jiang</td>
+      <td>Towards Fast Generative Image Compression</td>
+    </tr>
+    <tr>
+      <td>Cagan Alkan, Beliz Gunel</td>
+      <td>Generative Adversarial Network for Compressed Sensing MRI</td>
+    </tr>
+    <tr>
+      <td>Andrew Bylard</td>
+      <td>Generating Coarse Seed Trajectories for Refinement</td>
+    </tr>
+    <tr>
+      <td>Eric Wang + Hugh Zhang</td>
+      <td>A new method for chit-chat dialogue generation</td>
+    </tr>
+    <tr>
+      <td>Stefania Moroianu, Charbel Saad</td>
+      <td>Voice conversion with Flow-GAN + CycleGAN</td>
+    </tr>
+    <tr>
+      <td>Jonathan Gomes Selman, Woody Wang</td>
+      <td>Intuitive Teleoperation via VAEs</td>
+    </tr>
+    <tr>
+      <td>Apoorva Dornadula, Ashwini Pokle</td>
+      <td>Improving Model Fairness…One Dataset At A Time</td>
+    </tr>
+    <tr>
+      <td>Lisa Lei</td>
+      <td>Unpaired GANs for MR Parallel Imaging Reconstruction</td>
+    </tr>
+    <tr>
+      <td>Mark Sabini, Zahra Abdullah, Darrith Phan</td>
+      <td>GAN-stronomy: Generative Cooking with Conditional DCGANs</td>
+    </tr>
+    <tr>
+      <td>Yuxing Chen, Zhefan Wang</td>
+      <td>An Analysis of Various Image Inpainting Methods</td>
+    </tr>
+    <tr>
+      <td>Stephen Pfohl, Daisy Ding, Tony Duan</td>
+      <td>Latent-Variable Models for Counterfactual Fairness in Cardiovascular Disease Risk Prediction</td>
+    </tr>
+    <tr>
+      <td>Shuyang Shi, Yongshang Wu</td>
+      <td>Change Point Detection with Deep Generative Models</td>
+    </tr>
+    <tr>
+      <td>Toby</td>
+      <td>Generating chord progressions with recurrent VAEeeeeeeeees</td>
+    </tr>
+    <tr>
+      <td>Chris Chute, Kelly Shen</td>
+      <td>CycleFlow: Unpaired Image-to-image Translation with Normalizing Flows</td>
+    </tr>
+    <tr>
+      <td>Loren Amdahl-Culleton</td>
+      <td>Neural FM Synthesis</td>
+    </tr>
+    <tr>
+      <td>Mansheej Paul, Phillip Etter</td>
+      <td>Deep Tunes</td>
+    </tr>
+    <tr>
+      <td>Ji Won Park</td>
+      <td>Classification of Astronomical Time Series with Representation Learning</td>
+    </tr>
+    <tr>
+      <td>Karen Leung</td>
+      <td>Latent MDP</td>
+    </tr>
+    <tr>
+      <td>Alex Kolchinski, Andrew Kondrich</td>
+      <td>CycleFlow</td>
+    </tr>
+    <tr>
+      <td>Xiao Chen, Thomas Navidi</td>
+      <td>A GAN based method for fairness and privacy</td>
+    </tr>
+    <tr>
+      <td>Jen Weng</td>
+      <td>Cycle Consistency in Normal Flow Models</td>
+    </tr>
+    <tr>
+      <td>Arjun Arora, William Zeng</td>
+      <td>Frame Interpolation on Dance Covers using Generative Adversarial Networks</td>
+    </tr>
+    <tr>
+      <td>Ben Sorscher</td>
+      <td>Simulating Gravitational Lenses with Deep Generative Models</td>
+    </tr>
+    <tr>
+      <td>Abhi Kulgod, Neel Yerneni, Varun Nambakrishnan</td>
+      <td>MuseVAE: Mood Based Music Generation</td>
+    </tr>
+    <tr>
+      <td>Victoria Tsai, Sagnik Majumder, Patrick DeMIchele</td>
+      <td>FlowGAN</td>
+    </tr>
+    <tr>
+      <td>Zhen Qin, Kuangcong Liu, Haoshen Hong</td>
+      <td>Travelling Salesmen Problem Approximation with Probabilistic Generations</td>
+    </tr>
+    <tr>
+      <td>Peter Zachares, Michelle A Lee</td>
+      <td>Multimodal Representation Models in Robotics</td>
+    </tr>
+    <tr>
+      <td>Xiaobai Ma</td>
+      <td>Novel View Synthesis by Geometric Transformation and Image Completion Neural Network</td>
+    </tr>
+    <tr>
+      <td>Jiaqi Jiang, Chenzhuo Zhu</td>
+      <td>GAN-enabled metasurface design</td>
+    </tr>
+    <tr>
+      <td>Dian Ang Yap</td>
+      <td>Audio joint-source channel coding</td>
+    </tr>
+    <tr>
+      <td>Justin Dieter, Brian Lui</td>
+      <td>Dual Repulsive BiGANs for Anomaly Detection</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>We gratefully acknowledge funding from the Stanford Computer Forum for sponsoring the poster session.</em></p>
+
+
+
+      <footer class="site-footer">
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </section>
+
+    
+  </body>
+</html>
